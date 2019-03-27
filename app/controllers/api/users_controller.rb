@@ -9,11 +9,17 @@ class Api::UsersController < ApplicationController
     @user.discord_id = generate_discord_id(@user.user_name)
     if @user.save!
       log_in(@user)
+      render "api/users/show"
     else
-      flash[errors] = @user.errors.full_messages
+      render json: @user.errors.full_messages, status: 422
     end
   end
 
+    def show
+      
+      @user = User.find(params[:id])
+      
+    end
 
   private
 
@@ -22,7 +28,7 @@ class Api::UsersController < ApplicationController
   end
 
   def generate_discord_id(user_name)
-    random_num = Random.new(1000)
+    random_num = Random.rand(1000)
     user_name ="#{user_name}#{random_num}"
     while (User.find_by(user_name: user_name))
           user_name ="#{user_name}#{random_num}"

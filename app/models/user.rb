@@ -35,8 +35,8 @@ class User < ApplicationRecord
     self.session_token ||= User.generate_session_token
   end
 
-  def self.find_by_credentials(discord_id, password)
-    @user = User.find_by(discord_id: discord_id)
+  def self.find_by_credentials(email, password)
+    @user = User.find_by(email: email)
     return nil unless @user && @user.is_password?(password)
     @user
   end
