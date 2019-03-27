@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.discord_id = generate_discord_id(@user.user_name)
-    if @user.save!
+    if @user.save
       log_in(@user)
       render "api/users/show"
     else

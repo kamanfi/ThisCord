@@ -23,7 +23,13 @@ export const receiveErrors = (errors) => {
 };
 
 export const login = (user) => dispatch => {
-  return SessionApi.login(user).then((user) => dispatch(receiveCurrentUser(user)));
+  
+  return ( 
+    SessionApi.login(user).then((user) => dispatch(receiveCurrentUser(user)),
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    )))
+
 };
 
 export const logout = () => dispatch => {
@@ -31,5 +37,10 @@ export const logout = () => dispatch => {
 };
 
 export const signup = (user) => dispatch => {
-  return SessionApi.signup(user).then((user) => dispatch(receiveCurrentUser(user)));
+  
+  return ( 
+      SessionApi.signup(user).then((user) => dispatch(receiveCurrentUser(user)),
+    err => (
+      dispatch(receiveErrors(err.responseJSON))
+    )));
 };

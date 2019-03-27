@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import Greetings from './Greetings';
 
 const msp = (state, ownProps) => {
-  debugger
+
+  
+  const currentUser = (state.session === null ? null : state.entities.users[state.session.id]);
   return {
-    currentUser: state.entities.users[state.session.id]
+    currentUser
   };
 };
 
