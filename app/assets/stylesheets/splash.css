@@ -1,0 +1,6 @@
+.splash-div {
+  display: flex;
+  background: url('splash/tempSplash2.png');
+  align-items: center;
+  justify-content: center;
+}

@@ -5,9 +5,9 @@ import Greetings from './Greetings';
 const msp = (state, ownProps) => {
 
   
-  const currentUser = (state.session === null ? null : state.entities.users[state.session.id]);
+  // const currentUser = (state.session === null ? null : state.entities.users[state.session.id]);
   return {
-    currentUser
+    currentUser: state.entities.users[state.session.id]
   };
 };
 

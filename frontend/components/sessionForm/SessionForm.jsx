@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   
@@ -34,37 +35,52 @@ class SessionForm extends React.Component {
   render(){
 
     if (this.props.formType === 'Sign Up'){
-    return(
-      <div>
-      {this.renderErrors()}
-
-        <form onSubmit={this.handelSubmit}> 
-          <label>Email
-          <input type="text" onChange={this.handelChange('email')} value={this.state.email} />
-          </label>
-          <label>Password
-          <input type="password" onChange={this.handelChange('password')} value={this.state.password} />
-          </label>
-          <label>Username
-          <input type="text" onChange={this.handelChange('user_name')} value={this.state.user_name}/>
-          </label>
-          <input type="submit" value={this.props.formType}/>
-        </form>
+      return(
+        <div className='session-div'>
+          <form className='session-form'> 
+            <h2>Create an account</h2>
+            {this.renderErrors()}
+              <label>
+                Email
+                <br></br>
+                <input type="text" onChange={this.handelChange('email')} value={this.state.email} />
+              </label>
+              <label>
+                Username
+                <br></br>
+                <input type="text" onChange={this.handelChange('user_name')} value={this.state.user_name}/>
+              </label>
+              <label>
+                Password
+                <br></br>
+                <input type="password" onChange={this.handelChange('password')} value={this.state.password} />
+              </label>
+              <label>
+                <button className="continue-button" onClick={this.handelSubmit} >Login</button>
+            </label>
+            <span><Link to={'/login'}>Already have an account?</Link></span>
+          </form>
       </div>
     )
   }else{
       return (
-        <div>
+        <div className='session-div'>
+          <form className='session-form' id="log-in">
           {this.renderErrors()}
-
-          <form onSubmit={this.handelSubmit}>
-            <label>Email
-          <input type="text" onChange={this.handelChange('email')} value={this.state.email} />
+            <h3>Welcome back!</h3>
+            <h1>We're so excited to see you again!</h1>
+            <label>
+              Email
+              <br></br>
+              <input type="text" onChange={this.handelChange('email')} value={this.state.email} />
             </label>
-            <label>Password
-          <input type="password" onChange={this.handelChange('password')} value={this.state.password} />
+            <label>
+              Password
+              <br></br>
+              <input type="password" onChange={this.handelChange('password')} value={this.state.password} />
             </label>
-            <input type="submit" value={this.props.formType} />
+            <button className="continue-button" onClick={this.handelSubmit} >Continue</button>
+            <span>Need an account? <Link to={'/signup'}>Register</Link></span>
           </form>
         </div>
       )

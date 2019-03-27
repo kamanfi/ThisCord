@@ -12,7 +12,7 @@ export const session = (oldState = {id: null}, action) =>{
             const newState = {id: action.user.id};
             return newState;
         case LOGOUT_CURRENT_USER:
-            return null;
+            return { id: null };
         default:
             return oldState;
     }

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SignUpForm from '../sessionForm/SignupFormContainer';
+// import SignUpForm from '../sessionForm/SignupFormContainer';
 class Greeting extends React.Component {
 
 
@@ -21,7 +21,7 @@ class Greeting extends React.Component {
       )
     } else {
       return (
-        <div>
+        <div className='splash-div'>
           <Link to={'/signup'}>Sign up</Link>
           <br></br>
           <Link to={'/login'}>Log in</Link>
