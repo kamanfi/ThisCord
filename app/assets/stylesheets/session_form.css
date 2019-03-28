@@ -76,6 +76,7 @@ div {
 input:focus { 
    border: solid #7289da 3px;
 }
-Link {
+
+.session-form Link {
   color: #7289da;
 }

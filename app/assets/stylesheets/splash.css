@@ -1,6 +1,25 @@
 .splash-div {
   display: flex;
-  background: url('splash/tempSplash2.png');
+  background: url('splash/temp4.jpg');
   align-items: center;
   justify-content: center;
+  color: #ffffff;
 }
+
+.splash-div article{
+  display: flex;
+  position: absolute;
+  top: 100px;
+  flex-direction:column;
+}
+.splash-div aside {
+  display: flex;
+  justify-content: space-evenly;
+}
+.splash-div span {
+    display: flex;
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color:  #7289da;
+  }

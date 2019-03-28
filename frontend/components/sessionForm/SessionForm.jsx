@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = this.props.user;
     this.handelSubmit = this.handelSubmit.bind(this);
+    this.demoUser = this.demoUser.bind(this);
   }
 
   handelSubmit(e){
@@ -30,6 +31,18 @@ class SessionForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  demoUser(e) {
+    e.preventDefault();
+    const demouser ={
+      email: 'demoUser@demoUser.com',
+      password: '1234567'
+    }
+    debugger
+    this.state = demouser;
+    
+    return this.handelSubmit(e)
   }
 
   render(){
@@ -80,6 +93,7 @@ class SessionForm extends React.Component {
               <input type="password" onChange={this.handelChange('password')} value={this.state.password} />
             </label>
             <button className="continue-button" onClick={this.handelSubmit} >Continue</button>
+            <button className="continue-button" onClick={this.demoUser} >Demo User</button>
             <span>Need an account? <Link to={'/signup'}>Register</Link></span>
           </form>
         </div>

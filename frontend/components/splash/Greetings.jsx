@@ -22,9 +22,22 @@ class Greeting extends React.Component {
     } else {
       return (
         <div className='splash-div'>
-          <Link to={'/signup'}>Sign up</Link>
-          <br></br>
-          <Link to={'/login'}>Log in</Link>
+        <article>
+          <h2>It's time to ditch Skype and TeamSpeak.</h2>
+          <p>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.</p>
+          <p>Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life. </p>
+        <aside>
+          <span>
+             <Link to={'/signup'}>Sign up</Link>
+          </span>
+          <span>
+            <Link to={'/login'}>Log in</Link>
+          </span>
+        </aside>
+          
+        </article>
+         
+          
         </div>
       )
     }
