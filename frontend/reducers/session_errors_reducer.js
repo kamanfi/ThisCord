@@ -5,7 +5,7 @@ import {
 } from '../actions/session_actions';
 
 export const sessionErrorsReducer = (oldState = [], action) => {
-  
+  debugger
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:

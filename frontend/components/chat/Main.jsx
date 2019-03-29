@@ -11,10 +11,11 @@ class Main extends React.Component{
   }
   
   componentDidMount(){
+    this.props.fetchServers();
   }
 
   handleLogout(e){
-    e.preventDefault;
+    e.preventDefault();
     this.props.logout().then(() => this.props.history.push('/@me'))
   }
 

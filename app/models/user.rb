@@ -45,5 +45,9 @@ class User < ApplicationRecord
     SecureRandom.urlsafe_base64
   end
 
-  
+  has_many :servers,
+  class_name: :Server,
+  primary_key: :id,
+  foreign_key: :moderator_id
+
 end
