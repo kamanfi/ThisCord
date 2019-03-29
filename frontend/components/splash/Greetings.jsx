@@ -2,24 +2,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import SignUpForm from '../sessionForm/SignupFormContainer';
+import Main from '../chat/Main';
+import { AuthRoute, ProtectedRoute } from '../../util/routeUtil';
+import { Route, Switch } from 'react-router-dom';
 class Greeting extends React.Component {
 
-
   componentDidMount() {
-    
-
+    this.props.clearErrors();
   }
 
   render() {
-    
-    if (this.props.currentUser != null) {
-      return (
-        <div>
-          <li>{this.props.currentUser.user_name}</li>
-          <button onClick={this.props.logout}>logout</button>
-        </div>
-      )
-    } else {
+   
       return (
         <div className='splash-div'>
         <article>
@@ -27,7 +20,7 @@ class Greeting extends React.Component {
           <p>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.</p>
           <p>Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life. </p>
         <aside>
-          <span>
+          <span>     
              <Link to={'/signup'}>Sign up</Link>
           </span>
           <span>
@@ -40,7 +33,6 @@ class Greeting extends React.Component {
           
         </div>
       )
-    }
   }
 }
 

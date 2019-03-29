@@ -1,4 +1,4 @@
-import { logout } from '../../actions/session_actions';
+import { logout, clearErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import Greetings from './Greetings';
 
@@ -14,6 +14,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return {
     logout: () => dispatch(logout()),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

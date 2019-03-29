@@ -46,3 +46,7 @@ ul {
   display: block;
   clear: both;
 }
+input, button{
+outline: none;
+border: none;
+}
