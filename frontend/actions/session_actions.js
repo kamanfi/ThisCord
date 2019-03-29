@@ -32,7 +32,7 @@ export const clearErrors = () => {
 };
 
 export const login = (user) => dispatch => {
-  
+
   return ( 
     SessionApi.login(user).then((user) => dispatch(receiveCurrentUser(user)),
     err => (

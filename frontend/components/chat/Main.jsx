@@ -7,10 +7,15 @@ class Main extends React.Component{
 
   constructor(props){
     super(props);
-
+    this.handleLogout = this.handleLogout.bind(this);
   }
   
   componentDidMount(){
+  }
+
+  handleLogout(e){
+    e.preventDefault;
+    this.props.logout().then(() => this.props.history.push('/@me'))
   }
 
   render() {
@@ -19,9 +24,7 @@ class Main extends React.Component{
       < div >
         <li>{this.props.currentUser.user_name}</li>
 
-        <button onClick={this.props.logout}>
-          <span><Link to={'/'}>Logout</Link></span>
-        </button>
+        <button onClick={this.handleLogout}>Logout</button>
       </div >
     ) 
   }else {

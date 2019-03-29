@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
 
   componentWillUnmount() {
   
-    // this.props.clearErrors();
+    this.props.clearErrors();
   }
 
 
@@ -49,14 +49,10 @@ class SessionForm extends React.Component {
   
     e.preventDefault();
     const demouser ={
-      email: 'demoUser@demoUser.com',
+      email: 'demoUser1@demoUser.com',
       password: '1234567'
     };
-    // dear kwasi: you took forever but this was what Alvin said:
-    // setState(updater, callback)
-    // goodnight!
-
-    this.props.action(demouser);
+    this.props.action(demouser).then(() => this.props.history.push('/@me'));
 
   }
 
@@ -104,7 +100,7 @@ class SessionForm extends React.Component {
               <input id={inputerror[2]} type="password" onChange={this.handelChange('password')} value={this.state.password} />
               </label>
               <label>
-                <button className="continue-button" onClick={this.handelSubmit} >Login</button>
+                <button className="continue-button" onClick={this.handelSubmit} >Continue</button>
             </label>
             <span><Link to={'/login'}>Already have an account?</Link></span>
           </form>
@@ -131,7 +127,7 @@ class SessionForm extends React.Component {
               <input id={inputerror[3]} type="password" onChange={this.handelChange('password')} value={this.state.password} />
             </label>
             <div>
-              <button className="continue-button" onClick={this.handelSubmit} >Continue</button>
+              <button className="continue-button" onClick={this.handelSubmit} >Login</button>
               <button className="continue-button" onClick={this.demoUser} >Demo User</button>
             </div>
             <span>Need an account? <Link to={'/signup'}>Register</Link></span>
