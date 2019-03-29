@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react'
 import SessionForm from './SessionForm';
-import { login } from '../../actions/session_actions';
+import { login, clearErrors } from '../../actions/session_actions';
 
 
 const msp = (state, ownProps) => {
@@ -20,7 +20,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
-    action: user => dispatch(login(user))
+    action: user => dispatch(login(user)),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

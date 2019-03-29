@@ -2,6 +2,7 @@ import * as SessionApi from '../util/sessionApiUtil';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'receiveErrors';
+export const CLEAR_ERRORS = 'receiveErrors';
 
 export const receiveCurrentUser = (currentUser) => {
   return {
@@ -22,8 +23,16 @@ export const receiveErrors = (errors) => {
   };
 };
 
+export const clearErrors = () => {
+
+  return {
+    type: CLEAR_ERRORS,
+    errors: []
+  };
+};
+
 export const login = (user) => dispatch => {
-  
+
   return ( 
     SessionApi.login(user).then((user) => dispatch(receiveCurrentUser(user)),
     err => (
