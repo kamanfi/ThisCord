@@ -1,12 +1,39 @@
 
-.nav1-div{
+.nav1-aside{
+  position: relative;
   display: flex;
   background-color: #23272A;
   color: white;
   flex-direction: column;
+
   padding: 0;
   margin: 0;
-  width: 6.7%;
-  overflow: auto;
-  min-height: 100%;
+  width:70px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 821px;
+  min-height: 821px;
+}
+
+.server-icon{
+  width: 70%;
+  height: 6vh;
+  margin: 10px;
+  border-radius: 100%;
+
+}
+
+.nav1-aside button:hover {
+  border-radius: 35%;
+  border-radius: 33%;
+  background-color: goldenrod;
+}
+
+//user nav
+
+.user-nav{
+  position: absolute;
+  display: flex;
+  bottom: 0px;
+  left: 70px;
 }

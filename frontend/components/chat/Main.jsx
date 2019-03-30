@@ -25,12 +25,11 @@ class Main extends React.Component{
     debugger
     if (this.props.currentUser){
     return  (
-      < div >
-           < Nav1 servers={this.props.servers} />
-        
-        
-        <li>{this.props.currentUser.user_name}</li>
+      < div>
+      < Nav1 servers={this.props.servers} />
+      <nav className='user-nav'>
         <button onClick={this.handleLogout}>Logout</button>
+      </nav>
       </div >
     ) 
     }

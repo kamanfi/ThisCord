@@ -3,19 +3,29 @@ import React from 'react';
 
 class Nav1  extends React.Component{
 
+  constructor(props){
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
 
 
+  handleClick(e){
+    console.log("TESTING")
+  }
 
   render(){
     
-    const lis =this.props.servers.map((server) =>{
-      return <li key ={server.id}>{server.server_name}</li>
+    const lis =this.props.servers.map(({ id}) =>{
+ 
+      return ( <button className='server-icon' key={id} onClick={this.handleClick}> CLICK</button>)
     })
 
     return (
-      <div className="nav1-div">
+      <aside className='nav1-aside'>
+      <ul>
         {lis}
-      </div>
+      </ul>
+      </aside>
     )
   }
 }

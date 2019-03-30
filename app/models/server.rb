@@ -12,7 +12,7 @@ class Server < ApplicationRecord
 
   private
   def ensure_img_url!
-    self.img_url ||= 'splash/Discord-Logo-White.svg'
+    self.img_url ||= 'assets/splash/Discord-Logo-White.svg'
   end
 
 end
