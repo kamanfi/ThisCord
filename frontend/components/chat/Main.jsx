@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav1 from './Nav1';
 import { Link } from 'react-router-dom';
 
 
@@ -12,6 +13,7 @@ class Main extends React.Component{
   
   componentDidMount(){
     this.props.fetchServers();
+    
   }
 
   handleLogout(e){
@@ -20,23 +22,21 @@ class Main extends React.Component{
   }
 
   render() {
-    if (this.props.currentUser != null){
+    debugger
+    if (this.props.currentUser){
     return  (
       < div >
+           < Nav1 servers={this.props.servers} />
+        
+        
         <li>{this.props.currentUser.user_name}</li>
-
         <button onClick={this.handleLogout}>Logout</button>
       </div >
     ) 
-  }else {
-      return (
-      <>
-      </>
-      )
     }
+  }
 }
-     
-}
+
 
 
 
