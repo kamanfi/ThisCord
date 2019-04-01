@@ -2,33 +2,79 @@
 .nav1-aside{
   position: relative;
   display: flex;
-  background-color: #23272A;
+  background-color: #202225;
   color: white;
   flex-direction: column;
-
-  padding: 0;
-  margin: 0;
+  padding-left: 5px;
   width:70px;
-  overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 821px;
-  min-height: 821px;
+  min-height: 100%;
+  max-height: 100%;
 }
 
 .server-icon{
+  position: relative;
   width: 70%;
   height: 6vh;
-  margin: 10px;
-  border-radius: 100%;
-
+  margin-bottom: 10px;
+  background-color: #2c2f33;  
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
 }
 
-.nav1-aside button:hover {
+.server-icon span{
+  margin-top: 40%;
+}
+
+.server-icon:hover {
   border-radius: 35%;
   border-radius: 33%;
-  background-color: goldenrod;
+  background-color :#7289DA;
 }
 
+//home icon
+.home-icon{
+  width: 70%;
+  height: 6vh;
+  border-radius: 25%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color:#2C2F33;
+
+}
+.home-icon img{
+
+  width: 100%;
+  border-radius: 25%;
+  margin-bottom: 15px;
+}
+.nav1-aside hr{
+  width: 100%;
+  border-color: black;
+}
+
+// + sign
+
+.add-server{
+  display: flex;
+  width: 70%;
+  height: 6vh;
+  border: dashed;
+  border-radius: 50%;
+ 
+  justify-content: center;
+  color: #535559;
+}
+
+.add-server:hover{
+  color: #FFFFFF
+}
+
+.add-server p{
+  font-size:  40px;
+}
 //user nav
 
 .user-nav{
@@ -36,4 +82,135 @@
   display: flex;
   bottom: 0px;
   left: 70px;
+}
+
+//modal
+
+.show-server-modal{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.8);
+}
+.hide-server-modal{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.server-modal-background{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-around;
+  margin-top: 15%;
+  height: 45%;
+  width: 27%;
+  background-image: image_url('nav1/leftghosts.png');
+  background-color: white ;
+  border-radius: 1%;
+}
+
+.server-modal-background h1{
+  color: #7289DA;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10%;
+  align-self: center;
+}
+
+//join/create actions
+.action-holder{
+  display: flex;
+  justify-content: space-around;
+}
+//createServer
+.create-server{
+  display: flex;
+  flex-direction: column;
+  border: solid black 1px;
+  border-radius: 3%;
+  justify-content: space-evenly;
+  padding: 1%;
+  right: 50%;
+  bottom: 50%;
+  height: 85%;
+  width: 40%;
+  background-color: #FFFFFF;
+}
+.create-server h1{
+  color: #7289DA;
+  align-self: center;
+}
+.create-server p{
+  color: #99aab5;
+  align-self: center;
+  font-size: 14px;
+  margin: 0;
+}
+.create-server img{
+  height: 30%;  
+  object-fit: contain;
+  align-self: center;
+}
+.create-action{
+    background-color:#7289DA;
+    border-radius: 1%;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-bottom: 2%;
+    padding-top: 4%;
+    height: 10%;
+    width: 55%;
+    align-self: center;
+    margin-top: 10%;
+    font-size: 14px;
+}
+
+
+//join server
+.join-server h1{
+  color: green;
+  align-self: center;
+}
+.join-server{
+  display: flex;
+  flex-direction: column;
+  border: solid black 1px;
+  border-radius: 3%;
+  justify-content: space-evenly;
+  padding: 1%;
+  right: 50%;
+  bottom: 50%;
+  height: 85%;
+  width: 40%;
+  background-color: #FFFFFF;
+}
+.join-server p{
+  color: #99aab5;
+  align-self: center;
+  font-size: 14px;
+}
+
+.join-server img{
+  height: 28%;
+  object-fit: contain;
+}
+
+.join-action{
+    background-color: green;
+    border-radius: 1%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 2%;
+    padding-top: 4%;
+    margin-top: 10%;
+    height: 10%;
+    align-self: center;
+    font-size: 14px;
 }
