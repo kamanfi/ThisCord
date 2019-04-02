@@ -8,8 +8,6 @@ import { merge } from 'lodash';
 
 export const serversReducer = (oldState={}, action) =>{
   Object.freeze(oldState);
-  debugger
-  
   switch(action.type){
     case RECEIVE_SERVERS:
       return merge({}, oldState, action.servers);

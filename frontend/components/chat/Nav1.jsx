@@ -1,44 +1,48 @@
 import React from 'react';
-import CreateServerForm from './CreateServerModal'
+import ServerModal from './serverModal/ServerModal';
+import Modal from '../modals/Modal';
+import {openModal} from '../../actions/modal_actions';
+import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom'
+import DefaultModal from './serverModal/DefaultModal';
+
 
 class Nav1  extends React.Component{
 
   constructor(props){
-    super(props)
-    this.handleClick = this.handleClick.bind(this);
-    this.showModal = this.showModal.bind(this);
-    this.hideModal = this.hideModal.bind(this);
-    this.createFromModal = this.createFromModal.bind(this);
+    super(props);
+
+    this.handleLogout = this.handleLogout.bind(this);
     this.state={
-      servermodal: 'hide-server-modal'
+      servermodal: 'hide-server-modal',
+      modal: ServerModal
     };
   }
 
-
-  handleClick(e){
-    e.stopPropagation();
-    console.log("TESTING");
+  handleLogout(e) {
+    e.preventDefault();
+    debugger
+    this.props.history.push('/');
   }
+ 
 
-  showModal(){
-    this.setState({ servermodal: 'show-server-modal'});
-  }
+  // showModal(){
+  //   this.setState({ servermodal: 'show-server-modal'});
+  // }
 
-  hideModal() {
-    this.setState({ servermodal: 'hide-server-modal' });
-  }
+  // hideModal() {
+  //   this.setState({ servermodal: 'hide-server-modal' });
+  // }
 
-  createFromModal(){
-    
+  selectServer(id){
+    this.props.history.push(`/@me/${id}`);
   }
 
   render(){
-    
     const lis =this.props.servers.map(({id, img_url}) =>{
-     
-      return (<li className='server-icon' key={id} onClick={this.handleClick}> <span>BB</span> </li>)
+      return (<li className='server-icon' key={id} onClick={() => this.selectServer(id)}> <span>BB</span> </li>)
     })  
-    
+
     return (
       <aside className='nav1-aside'>
         <span className='home-icon'> 
@@ -48,33 +52,12 @@ class Nav1  extends React.Component{
         <ul>
         {lis}
         </ul>
-        <span className='add-server' onClick={this.showModal}><p>+</p></span>
-
-        <div className={this.state.servermodal} onClick={this.hideModal}>
-          <span className='server-modal-background' onClick={this.handleClick}>
-            <h1>OH, ANOTHER SERVER HUH?</h1>
-            <div className='action-holder'>
-            <span className='create-server'>
-            <h1>CREATE</h1>
-              <p>Create a new server and <br></br>
-              invite your friends. it's free!</p>
-              <img src="assets/nav1/create_action_icon.png" alt=""/>
-                <div className='create-action' onClick={this.createFromModal}>Create a server</div>
-            </span>
-              <span className='join-server'>
-                <h1>JOIN</h1>
-                <p>Enter an instant invite and <br></br>
-                  your friend's server</p>
-                <img src="assets/nav1/join_action_icon.png" alt="" />
-                <div className='join-action'>Join a server</div>
-            </span>
-            </div>
-
-          </span>
-        </div>
-      </aside>
+        <span className='add-server' onClick={() => dispatch(openModal('option'))}><p>+</p></span>
+            < Modal />
+       </aside>
     )
   }
 }
 
-export default Nav1;
+
+export default withRouter(Nav1);

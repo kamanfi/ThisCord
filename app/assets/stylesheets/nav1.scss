@@ -59,8 +59,8 @@
 
 .add-server{
   display: flex;
-  width: 70%;
-  height: 6vh;
+  width: 60%;
+  height: 10%;
   border: dashed;
   border-radius: 50%;
  
@@ -74,14 +74,6 @@
 
 .add-server p{
   font-size:  40px;
-}
-//user nav
-
-.user-nav{
-  position: absolute;
-  display: flex;
-  bottom: 0px;
-  left: 70px;
 }
 
 //modal
@@ -109,8 +101,8 @@
   position: relative;
   justify-content: space-around;
   margin-top: 15%;
-  height: 45%;
-  width: 27%;
+  height: 100%;
+  width: 100%;
   background-image: image_url('nav1/leftghosts.png');
   background-color: white ;
   border-radius: 1%;
@@ -213,4 +205,133 @@
     height: 10%;
     align-self: center;
     font-size: 14px;
+}
+
+//
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  width: 28.5%;
+  top: 50%;
+  left: 50%;
+  height: 45%;
+  transform: translate(-50%, -50%);
+}
+
+//create server
+.create-modal-background{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 15%;
+  height: 100%;
+  width: 100%;
+  background-color: white ;
+  color: #7289DA;
+  border-radius: 1%;
+}
+
+.create-modal-background h1{
+  color: #7289DA;
+  font-weight: 700;
+  font-size: 20px;
+  align-self: center;
+  margin-bottom: 2%;
+}
+
+.create-modal-background p{
+  align-self: center;
+  margin-bottom: 2%;
+  color: #99aab5
+}
+
+.create-modal-background input {
+  border: 0;
+  border-bottom: solid #7289DA 2px;
+  font-size: 18px;
+  outline:none
+}
+
+.lower-container{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  top: 47%;
+  width: 100%;
+  height: 20%
+}
+.create-modal-background button{
+  background-color: #7289DA;
+  align-self: center;
+  font-size: 20px;
+  margin: 3%;
+  color: white;
+  border-radius: 3%;
+}
+
+//join server
+.join-modal-background{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 15%;
+  height: 100%;
+  width: 100%;
+  background-color: white ;
+  color: #7289DA;
+  border-radius: 1%;
+}
+
+.join-modal-background h1{
+  color: green;
+  font-weight: 700;
+  font-size: 20px;
+  align-self: center;
+  margin-bottom: 2%;
+}
+
+.join-modal-background p{
+  align-self: center;
+  margin-bottom: 2%;
+  color: #535559;
+}
+
+
+.join-modal-background input{
+  border: 0;
+  border-bottom: solid #7289DA 2px;
+  font-size: 18px;
+  outline:none;
+
+  width: 90%; 
+}
+
+.lower-container2{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  top: 38%;
+  height: 20%
+}
+
+.join-modal-background button{
+  background-color: green;
+  align-self: center;
+  font-size: 20px;
+  margin: 3%;
+  color: white;
+  border-radius: 3%;
 }
