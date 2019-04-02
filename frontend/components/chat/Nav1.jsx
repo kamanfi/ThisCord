@@ -3,8 +3,9 @@ import ServerModal from './serverModal/ServerModal';
 import Modal from '../modals/Modal';
 import {openModal} from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 import DefaultModal from './serverModal/DefaultModal';
+import { selectsServer } from '../../actions/current_server_actions';
 
 
 class Nav1  extends React.Component{
@@ -23,8 +24,12 @@ class Nav1  extends React.Component{
     e.preventDefault();
     this.props.history.push('/');
   }
- 
+  componentDidMount(){
+    dispatch(selectsServer(id));
+  }
+
   selectServer(id){
+    dispatch(selectsServer(id));
     this.props.fetchTextChannels(id).then(this.props.history.push(`/@me/${id}`));
   }
 
@@ -36,7 +41,7 @@ class Nav1  extends React.Component{
     return (
       <aside className='nav1-aside'>
         <span className='home-icon'> 
-          <img src="assets/nav1/homeicon2.png" alt=""/>
+          <img src="assets/nav1/homeicon2.png" alt=""/>vv 
         </span>
         <hr/>
         <ul>

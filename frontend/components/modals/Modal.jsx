@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import DefaultModal from '../chat/serverModal/DefaultModal';
 import CreateServerModal from '../chat/serverModal/CreateServerModal';
 import JoinServerModal from '../chat/serverModal/JoinServerModal';
+import CreateChannelModal from '../chat/channelModal/CreateChannelModal';
 
 function Modal({ modal, closeModal }) {
 
@@ -21,6 +22,9 @@ function Modal({ modal, closeModal }) {
       break;
     case 'join':
       component = <JoinServerModal />;
+      break;
+    case 'createChannel':
+      component = <CreateChannelModal />;
       break;
     default:
       return null;

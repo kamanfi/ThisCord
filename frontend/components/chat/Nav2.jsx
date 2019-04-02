@@ -1,12 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { openModal } from '../../actions/modal_actions';
 
 const Nav2 = (props) =>{
-
+  debugger
   console.log(props);
   const lis = props.textChannels.map( (channel) => {
-    return  <li key={channel.id}>{channel.name}</li>
+    return  <li key={channel.id}># <span className='name'>{channel.name}</span> </li>
   });
+
+ 
   return(
     <nav className='nav2'>
       <div className='invite'>
@@ -14,7 +17,13 @@ const Nav2 = (props) =>{
       </div>
 
       <div className='channel'>
-        {props.match.params.serverId}
+        <p className='create-container'>
+          <span>TEXT CHANNEL</span>
+          <span className='plus-button' onClick={() => dispatch(openModal('createChannel'))} >+</span>
+        </p>
+         <ul>
+           {lis.shift()}
+         </ul>
         <ul>
           {lis}
         </ul>
