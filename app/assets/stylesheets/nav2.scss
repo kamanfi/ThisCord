@@ -1,3 +1,38 @@
-div{
-  
+
+.nav2{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+  left: 70px;
+  height: 92%;
+  width: 12.5%;
+  padding-bottom: 1%;
+  color: #99aab5;
+  background-color: #2C2F33;
+  font-size: 12px;
+}
+.invite{
+  display: flex;
+  align-items: center;
+  top: 0px;
+  left: 70px;
+  height: 23%;
+  width: 100%;
+  color: #99aab5;
+  background-color: #23272A;
+  font-size: 12px;
+}
+
+
+.channel{
+  flex-direction: row;
+  justify-content: space-around;
+  top: 0px;
+  left: 70px;
+  height: 77%;
+  width: 100%;
+  color: #99aab5;
+  background-color: #2C2F33;
+  font-size: 12px;
 }

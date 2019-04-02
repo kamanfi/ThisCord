@@ -8,14 +8,14 @@ import { Route, Switch } from 'react-router-dom';
 import { AuthRoute,ProtectedRoute } from '../util/routeUtil';
 const App = () => (
   <div>
-    <ProtectedRoute exact path='/@me/:serverId' component={Nav2} />
     
     <Switch>
-      <ProtectedRoute exact path='/@me' component={Main} />
       <AuthRoute exact path='/signup' component={SignUp} />
       <AuthRoute exact path='/login' component={Login} />
       <AuthRoute exact path='/' component={Greetings} />
     </Switch>
+      <ProtectedRoute exact path='/@me' component={Main} />
+      <ProtectedRoute exact path='/@me/:serverId' component={Nav2} />
     
   </div>
 );
