@@ -1,8 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const Nav2 = (props) =>{
 
   console.log(props);
+  const lis = props.textChannels.map( (channel) => {
+    return  <li key={channel.id}>{channel.name}</li>
+  });
   return(
     <nav className='nav2'>
       <div className='invite'>
@@ -11,10 +15,20 @@ const Nav2 = (props) =>{
 
       <div className='channel'>
         {props.match.params.serverId}
+        <ul>
+          {lis}
+        </ul>
       </div>
     </nav>
     
   )
 }
 
-export default Nav2;
+const msp = (state, ownProps) => {
+  return {
+    textChannels: Object.values(state.entities.textChannels)
+  }
+}
+
+
+export default connect(msp)(Nav2);

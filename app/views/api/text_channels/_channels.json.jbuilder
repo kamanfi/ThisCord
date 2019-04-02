@@ -1,0 +1,1 @@
+json.extract! text_channel, :id, :name, :server_id

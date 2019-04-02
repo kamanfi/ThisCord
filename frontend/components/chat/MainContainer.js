@@ -3,6 +3,8 @@ import { logout} from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import Main from './Main';
 import { fetchServers } from '../../actions/server_actions';
+import { fetchTextChannels } from '../../actions/textChannel_actions';
+
 
 const msp = (state, ownProps) => {
 
@@ -17,7 +19,8 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return {
     logout: () => dispatch(logout()),
-    fetchServers: () => dispatch(fetchServers())
+    fetchServers: () => dispatch(fetchServers()),
+    fetchTextChannels: (id) => dispatch(fetchTextChannels(id))
   };
 };
 

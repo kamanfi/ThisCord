@@ -1,0 +1,1 @@
+json.partial! 'api/text_channels/channels', text_channel: @text_channel

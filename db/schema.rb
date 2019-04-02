@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_29_145247) do
+ActiveRecord::Schema.define(version: 2019_04_02_122716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 2019_03_29_145247) do
     t.string "img_url"
     t.string "#<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition"
     t.index ["moderator_id"], name: "index_servers_on_moderator_id"
+  end
+
+  create_table "text_channels", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "server_id", null: false
+    t.index ["server_id"], name: "index_text_channels_on_server_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -21,21 +21,11 @@ class Nav1  extends React.Component{
 
   handleLogout(e) {
     e.preventDefault();
-    debugger
     this.props.history.push('/');
   }
  
-
-  // showModal(){
-  //   this.setState({ servermodal: 'show-server-modal'});
-  // }
-
-  // hideModal() {
-  //   this.setState({ servermodal: 'hide-server-modal' });
-  // }
-
   selectServer(id){
-    this.props.history.push(`/@me/${id}`);
+    this.props.fetchTextChannels(id).then(this.props.history.push(`/@me/${id}`));
   }
 
   render(){

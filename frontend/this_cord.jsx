@@ -8,6 +8,7 @@ import Root from './components/Root';
 // import * as sessionUtil from './util/sessionApiUtil';
 import { login, logout, signup } from '../frontend/actions/session_actions';
 import { fetchServers, fetchServer, createServer, deleteServer } from './actions/server_actions';
+import { createTextChannel, fetchTextChannels, deleteTextChannel} from './actions/textChannel_actions';
 // import { fetchServers, fetchServer, createServer, deleteServer } from './util/severApiUtil';
 // import Root from '../frontend/components/root';
 
@@ -41,6 +42,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     window.fetchServer  = fetchServer;
     window.createServer = createServer;
     window.deleteServer = deleteServer;
+  // TESTING textchannels
+  window.createTextChannel = createTextChannel;
+  window.fetchTextChannels = fetchTextChannels;
+  window.deleteTextChannels = deleteTextChannel;
+
 
   ReactDOM.render(<Root store={store} />, root)
 });

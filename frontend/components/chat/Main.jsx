@@ -22,7 +22,7 @@ class Main extends React.Component{
  
     return  (
       < div>
-        < Nav1 servers={this.props.servers} />
+        < Nav1 servers={this.props.servers} fetchTextChannels={this.props.fetchTextChannels}/>
         < UserNav username={this.props.currentUser[0]} logout={this.props.logout} />
 
       </div >

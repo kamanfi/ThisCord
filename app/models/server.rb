@@ -8,6 +8,10 @@ class Server < ApplicationRecord
   primary_key: :id,
   foreign_key: :moderator_id
 
+  has_many :text_channels,
+  class_name: :TextChannel,
+  primary_key: :id,
+  foreign_key: :server_id
 
 
   private
