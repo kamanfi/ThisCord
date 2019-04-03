@@ -13,6 +13,11 @@ class Server < ApplicationRecord
   primary_key: :id,
   foreign_key: :server_id
 
+  has_many :users,
+  class_name: :UsersServer,
+  primary_key: :id,
+  foreign_key: :server_id
+
 
   private
   def ensure_img_url!

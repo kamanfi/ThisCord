@@ -9,6 +9,8 @@ class Api::ServersController < ApplicationController
     @server.moderator_id = current_user.id
     # debugger
     if @server.save
+        @users_server = UsersServer.new({user_id: current_user.id, server_id: @server.id})
+        @users_server.save!
       render "api/servers/show"
     else
       render json: @server.errors.full_messages, status: 422

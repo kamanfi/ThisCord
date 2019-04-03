@@ -1,3 +1,3 @@
-json.extract! server, :server_name, :id, :moderator_id, :img_url
+json.extract! server, :server_id
 
 
