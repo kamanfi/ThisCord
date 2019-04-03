@@ -32,6 +32,7 @@ class Nav1  extends React.Component{
   }
 
   render(){
+    
     const lis =this.props.servers.map(({server_id, img_url}) =>{
       return (<li className='server-icon' key={server_id} onClick={() => this.selectServer(server_id)}> <span>BB</span> </li>)
     })  

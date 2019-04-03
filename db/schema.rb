@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_02_215640) do
+ActiveRecord::Schema.define(version: 2019_04_03_005006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_04_02_215640) do
     t.datetime "updated_at", null: false
     t.string "img_url"
     t.string "#<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition"
+    t.string "invite_code"
     t.index ["moderator_id"], name: "index_servers_on_moderator_id"
   end
 
