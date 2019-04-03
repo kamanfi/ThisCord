@@ -7,7 +7,6 @@ import {withRouter} from 'react-router-dom';
 
 class CreateServerModal extends React.Component {
   constructor(props) {
-    debugger
     super(props);
     this.state = this.props.server;
     this.handeleSubmit = this.handeleSubmit.bind(this);
@@ -26,7 +25,6 @@ class CreateServerModal extends React.Component {
   }
   
   render() {
-    debugger
     return (
 
 
@@ -49,10 +47,9 @@ class CreateServerModal extends React.Component {
 
 
 const msp = (state, ownProps) => {
-  debugger
   const server = {
     name: "",
-    server_id: state.entities.currentServer
+    server_id: state.entities.currentServer.id
   };
   return {
     server,

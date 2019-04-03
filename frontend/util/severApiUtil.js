@@ -20,9 +20,18 @@ export const createServer = (server) => {
   });
 };
 
+export const joinServer = (invite_code) => {
+  
+  return $.ajax({
+    url: `/api/join`,
+    method: 'GET',
+    data: { invite_code }
+  });
+};
+
 export const deleteServer = (id) => {
   return $.ajax({
     url: `/api/servers/${id}`,
     method: 'DELETE'
   });
-};
+}; 

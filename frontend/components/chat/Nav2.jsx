@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 
 const Nav2 = (props) =>{
-  debugger
   console.log(props);
   const lis = props.textChannels.map( (channel) => {
     return  <li key={channel.id}># <span className='name'>{channel.name}</span> </li>
   });
 
- 
   return(
     <nav className='nav2'>
       <div className='invite'>
@@ -21,8 +19,8 @@ const Nav2 = (props) =>{
           <span>TEXT CHANNEL</span>
           <span className='plus-button' onClick={() => dispatch(openModal('createChannel'))} >+</span>
         </p>
-         <ul>
-           {lis.shift()}
+        <ul className='first_channel'>
+          {lis.shift()} <img onClick={() => dispatch(openModal('inviteCode'))} src="assets/nav2/add.svg" alt="" />
          </ul>
         <ul>
           {lis}
@@ -34,10 +32,13 @@ const Nav2 = (props) =>{
 }
 
 const msp = (state, ownProps) => {
+  debugger
   return {
     textChannels: Object.values(state.entities.textChannels)
   }
 }
 
 
+
 export default connect(msp)(Nav2);
+

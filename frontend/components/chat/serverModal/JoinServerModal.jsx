@@ -6,12 +6,13 @@ import { openModal, closeModal } from '../../../actions/modal_actions';
 class CreateServerModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.server_name;
+    this.state = this.props.invite_code;
     this.handeleSubmit = this.handeleSubmit.bind(this);
   }
 
   handeleSubmit(e) {
     e.preventDefault();
+    debugger
     this.props.joinServer(this.state).then(dispatch(closeModal()));
   }
 
@@ -38,7 +39,7 @@ class CreateServerModal extends React.Component {
                      placeholder
         </p>
         <label className="input-field">
-          <input type="text" onChange={this.handelChange('server_name')} value={this.state.server_name}/>
+          <input type="text" onChange={this.handelChange('invite_code')} value={this.state.invite_code}/>
           <ul>Enter an instant invite code</ul>
         </label>
         <label className="lower-container2">
@@ -54,11 +55,11 @@ class CreateServerModal extends React.Component {
 
 
 const msp = (state, ownProps) => {
-  const server_name = {
-    server_name: ""
+  const invite_code = {
+    invite_code: ""
   };
   return {
-    server_name,
+    invite_code,
     formType: 'Join Server'
   };
 
@@ -66,7 +67,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
-    joinServer: name => dispatch(joinServer(name)),
+    joinServer: invite_code => dispatch(joinServer(invite_code)),
   };
 };
 

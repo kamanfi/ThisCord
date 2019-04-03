@@ -24,17 +24,17 @@ class Nav1  extends React.Component{
     e.preventDefault();
     this.props.history.push('/');
   }
-
-  selectServer(id){
-    debugger
-    dispatch(selectsServer(id));
+  
+  selectServer({id, invite_code}){
+    dispatch(selectsServer({id, invite_code}));
     this.props.fetchTextChannels(id).then(this.props.history.push(`/@me/${id}`));
   }
 
   render(){
     
-    const lis =this.props.servers.map(({server_id, img_url}) =>{
-      return (<li className='server-icon' key={server_id} onClick={() => this.selectServer(server_id)}> <span>BB</span> </li>)
+
+    const lis =this.props.servers.map(({id, invite_code}) =>{
+      return (<li className='server-icon' key={id} onClick={() => this.selectServer({id, invite_code})}> <span>BB</span> </li>)
     })  
 
     return (

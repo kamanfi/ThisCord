@@ -102,3 +102,35 @@
   align-self: center;
   padding-left: 50%;
 }
+
+.first_channel{
+  display: flex;
+  justify-content: space-between;
+}
+
+.invite_modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  
+  height: 80%;
+  width: 80%;
+  background-color: #36393F;
+  color: #ffffff;
+  border-radius: 1%;
+}
+
+.invite_modal p{
+  position: relative;
+  bottom: 40%;
+}
+
+.invite_modal input{
+  height: 10%;
+  width: 70%;
+  background-color: #2B2F32;
+  color: #ffffff;
+  font-size: 21px;
+  border-radius: 1%;
+}

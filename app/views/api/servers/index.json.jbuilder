@@ -1,5 +1,5 @@
 @servers.each do |server|
   json.set! server.id do
-    json.extract! server, :server_id
+    json.partial! 'api/servers/server', server: server
   end
 end

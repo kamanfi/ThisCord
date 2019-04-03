@@ -38,6 +38,9 @@ export const createServer = (server) => dispatch => {
   return ServerUtil.createServer(server).then((server) => dispatch(receive_server(server)));
 };
 
+export const joinServer = (inviteCode) => dispatch => {
+  return ServerUtil.joinServer(inviteCode).then((server) => dispatch(receive_server(server)));
+};
 export const deleteServer = (id) => dispatch => {
   return ServerUtil.deleteServer(id).then((id) => dispatch(remove_server(id)));
 };

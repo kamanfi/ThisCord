@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav1 from './Nav1';
 import UserNav from './UserNav';
+import {selectsServer }from '../../actions/current_server_actions'
 import { Link } from 'react-router-dom';
 
 
@@ -13,7 +14,18 @@ class Main extends React.Component{
   }
   
   componentDidMount(){
-    this.props.fetchServers();
+    
+    
+    this.props.fetchServers().then((info) => {
+
+      if (Object.values(info.servers).length > 1){
+      const id =Object.values(info.servers)[0].id;
+      const invite_code = Object.values(info.servers)[0].invite_code;
+      dispatch(selectsServer({ id, invite_code }));
+      this.props.fetchTextChannels(id).then(this.props.history.push(`/@me/${id}`));
+      }else
+        this.props.fetchServers();
+    });
     
   }
 

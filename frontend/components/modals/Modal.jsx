@@ -5,6 +5,7 @@ import DefaultModal from '../chat/serverModal/DefaultModal';
 import CreateServerModal from '../chat/serverModal/CreateServerModal';
 import JoinServerModal from '../chat/serverModal/JoinServerModal';
 import CreateChannelModal from '../chat/channelModal/CreateChannelModal';
+import InviteCodeModal from '../chat/serverModal/InviteCodeModal';
 
 function Modal({ modal, closeModal }) {
 
@@ -26,6 +27,11 @@ function Modal({ modal, closeModal }) {
     case 'createChannel':
       component = <CreateChannelModal />;
       break;
+    case 'inviteCode':
+      component = <InviteCodeModal />;
+      break;
+      
+      
     default:
       return null;
   }
