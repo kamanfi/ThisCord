@@ -7,8 +7,16 @@
 
     <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Open+Sans", media: 'all' %>
     <%= javascript_include_tag 'application' %>
-  </head>
 
+    <script type="text/javascript">
+    window.homeicon2 = "<%= image_url('nav1/homeicon2.png')%>"
+    window.create_action_icon = "<%= image_url('nav1/create_action_icon.png')%>"
+    window.join_action_icon = "<%= image_url('nav1/join_action_icon.png')%>"
+    </script>
+
+
+  </head>
+  
   <body>
     <%= yield %>
   </body>

@@ -40,7 +40,7 @@ class Nav1  extends React.Component{
     return (
       <aside className='nav1-aside'>
         <span className='home-icon'> 
-          <img src="assets/nav1/homeicon2.png" alt=""/>
+          <img src={window.homeicon2} alt=""/>
         </span>
         <hr/>
         <ul>

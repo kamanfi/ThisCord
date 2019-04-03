@@ -60,12 +60,12 @@
 .add-server{
   display: flex;
   width: 60%;
-  height: 10%;
-  border: dashed;
+  height: 0%;
+  border: dotted;
   border-radius: 50%;
- 
   justify-content: center;
   color: #535559;
+  margin-left: 2%; 
 }
 
 .add-server:hover{
@@ -73,27 +73,10 @@
 }
 
 .add-server p{
-  font-size:  40px;
+  font-size: 40px;
 }
 
 //modal
-
-.show-server-modal{
-  display: flex;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  z-index: 100;
-  background-color: rgba(0,0,0,0.8);
-}
-.hide-server-modal{
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: red;
-}
 
 .server-modal-background{
   display: flex;

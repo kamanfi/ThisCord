@@ -25,11 +25,12 @@ class ChatRoom extends React.Component {
   }
 
   componentDidUpdate() {
-    this.bottom.current.scrollIntoView();
+   
   }
 
   render() {
     const messageList = this.state.messages.map(message => {
+      debugger
       return (
         <li key={message.id}>
           {message}
