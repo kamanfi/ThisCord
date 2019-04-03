@@ -1,52 +1,48 @@
 
 .nav2{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 0px;
-  left: 70px;
-  height: 92%;
-  width: 12.5%;
-  padding-bottom: 1%;
-  color: #99aab5;
-  background-color: #2C2F33;
-  font-size: 12px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0px;
+    left: 75px;
+    height: 96%;
+    width: 12.50%;
+    padding-bottom: 1%;
+    color: #99aab5;
+    background-color: #2F3136;
+    font-size: 12px;
 }
-.invite{
-  display: flex;
-  align-items: center;
-  top: 0px;
-  left: 70px;
-  height: 23%;
-  width: 100%;
-  color: #99aab5;
-  background-color: #23272A;
-  font-size: 12px;
-}
+
 
 
 .channel{
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   top: 0px;
   left: 70px;
-  height: 77%;
+  height: 100%;
   width: 100%;
   color: #99aab5;
-  background-color: #2C2F33;
   font-size: 12px;
 }
 
+.server-name{
+  color: #ffffff;
+  font-size: 20px;
+  margin: 10%;
+  padding-bottom: 50px;
+}
 .name{
   color: #ffffff;
 }
 
 .create-container{
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin-left: 5%;
   margin-right: 5%;
-  font-size: 16px;
+  font-size: 12px;
 }
 .plus-button{
   font-size: 20px;
@@ -106,8 +102,29 @@
 .first_channel{
   display: flex;
   justify-content: space-between;
+  margin-top: 5%;
+  margin-left: 4%;
+  margin-right: 2%;
+  font-size: 16px;
 }
+.channelul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 4%;
+  margin-right: 2%;
+  font-size: 16px;
+}
+.channels{
+  margin-top: 4%;
 
+  margin-right: 2%;
+  font-size: 16px;
+}
+.create-container span{
+  align-self: center;
+  font-size: 14px;
+}
 .invite_modal{
   display: flex;
   flex-direction: column;

@@ -56,4 +56,9 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :user_id
 
+  has_many :messages,
+  class_name: :Message,
+  primary_key: :id,
+  foreign_key: :author_id
+
 end

@@ -21,7 +21,8 @@ class Main extends React.Component{
       if (Object.values(info.servers).length > 1){
       const id =Object.values(info.servers)[0].id;
       const invite_code = Object.values(info.servers)[0].invite_code;
-      dispatch(selectsServer({ id, invite_code }));
+      const server_name = Object.values(info.servers)[0].server_name;
+      dispatch(selectsServer({ id, invite_code, server_name }));
       this.props.fetchTextChannels(id).then(this.props.history.push(`/@me/${id}`));
       }else
         this.props.fetchServers();

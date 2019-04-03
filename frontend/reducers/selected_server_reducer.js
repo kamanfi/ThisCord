@@ -1,6 +1,6 @@
 import { SELECT_SERVER, UNSELECT_SERVER, RETURN_SERVER} from '../actions/current_server_actions';
 
-export const currentServerReducer = (state = null, action) =>{
+export const currentServerReducer = (state = {}, action) =>{
   
   switch (action.type) {
     case SELECT_SERVER:
@@ -8,7 +8,7 @@ export const currentServerReducer = (state = null, action) =>{
     case RETURN_SERVER:
       return state;
     case UNSELECT_SERVER:
-      return null;
+      return {};
     default:
       return state;
   }
