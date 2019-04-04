@@ -11,10 +11,23 @@ class Greeting extends React.Component {
     this.props.clearErrors();
   }
 
+  images(){
+ 
+    // # window.laptop = "<%= image_url('splash2/laptop.gif')%>"
+  }
   render() {
+    return (
+      <div className='splash-div'>
+
+        <header className='upper-right-header'>
+          <div>
+          <img src={window.logo} alt=""/>
+          <a href="https://github.com/kamanfi/ThisCord">Github</a>  
+          </div>  
+          </header>
+
+    
    
-      return (
-        <div className='splash-div'>
         <article>
           <h2>It's time to ditch Skype and TeamSpeak.</h2>
           <p>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.</p>

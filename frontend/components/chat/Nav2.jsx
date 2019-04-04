@@ -8,7 +8,7 @@ const Nav2 = (props) =>{
   
   const chatbox =(id) =>{
     let channel_id = props.match.params.serverId;
-    props.history.push(`/@me/${channel_id}/${id}`);
+    // props.history.push(`/@me/${channel_id}/${id}`);
   };
 
 

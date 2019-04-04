@@ -1,7 +1,7 @@
 .splash-div {
 display: flex;
 background: image_url('splash/bestsplash.png');
-align-items: center;
+
 justify-content: center;
 color: #ffffff;
 }
@@ -23,3 +23,41 @@ padding-left: 30px;
 padding-right: 30px;
 background-color:  #7289da;
 }
+
+.upper-right-header{
+flex-direction: row;
+position: relative;
+right: 21%;
+top: 1.5%;
+}
+.upper-right-header img{
+  height: 5.5%;
+  top: 3%;
+  object-fit: contain;
+  align-self: center;
+}
+.upper-right-header a{
+  position: absolute;
+  margin-top: 1.5%;
+  margin-left: 1%;
+}
+    /* top: 100%; */
+
+       
+        // <img class='main-screen' src={window.mainMonitor} alt="" />
+        // <img src={window.circle} alt="" />
+        // <img src={window.AndroidP} alt="" />
+        // <img src={window.bomb} alt="" />
+        // <img src={window.controller} alt="" />
+        // <img src={window.coin} alt="" />
+        // <img src={window.disc} alt="" />
+        // <img src={window.flashdrive} alt="" />
+        // <img src={window.iphone} alt="" />
+        // <img src={window.laptop} alt="" />
+        // <img src={window.headphone} alt="" />
+        // <img src={window.mushroom} alt="" />
+        // <img src={window.potion} alt="" />
+        // <img src={window.singleDot} alt="" />
+        // <img src={window.square} alt="" />
+        // <img src={window.X} alt="" />
+        // <img src={window.zelda} alt="" />

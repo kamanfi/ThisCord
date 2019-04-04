@@ -38,7 +38,7 @@ class Main extends React.Component{
       < div>
         < Nav1 servers={this.props.servers} fetchTextChannels={this.props.fetchTextChannels}/>
         < UserNav username={this.props.currentUser[0]} logout={this.props.logout} />
-        <ChatRoom />
+ 
       </div >
     ) 
     
