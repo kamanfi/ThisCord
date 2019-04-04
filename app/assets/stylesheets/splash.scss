@@ -27,7 +27,7 @@ background-color:  #7289da;
 .upper-right-header{
 flex-direction: row;
 position: relative;
-right: 21%;
+right: 21.5%;
 top: 1.5%;
 }
 .upper-right-header img{
@@ -38,8 +38,15 @@ top: 1.5%;
 }
 .upper-right-header a{
   position: absolute;
-  margin-top: 1.5%;
+  margin-top: 1.9%;
   margin-left: 1%;
+  font-size: 13px;
+  color: #CFCFD0;
+}
+
+.upper-right-header a:hover{
+
+  color: #ffffff;
 }
     /* top: 100%; */
 
