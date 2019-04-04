@@ -18,7 +18,7 @@ const DefaultModal = ({ createServer, joinServer, back }) => {
           <h1>JOIN</h1>
           <p>Enter an instant invite and <br></br>
             your friend's server</p>
-          <img src={join_action_icon} alt="" />
+          <img src={window.join_action_icon} alt="" />
           <div className='join-action' onClick={() => dispatch(openModal('join'))}>Join a server</div>
         </span>
       </div>
