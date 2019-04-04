@@ -22,27 +22,29 @@ class Greeting extends React.Component {
         <header className='upper-right-header'>
           <div>
           <img src={window.logo} alt=""/>
-          <a href="https://github.com/kamanfi/ThisCord">Github</a>  
+          <a href="https://github.com/kamanfi/ThisCord">Github</a>
+    
           </div>  
+          <div className='upper-left-header'><Link to={'/login'}>Login</Link></div>
           </header>
 
     
+        <div className='signup'>     
+             <Link to={'/signup'}>Sign Up Now</Link>
+          </div>
    
         <article>
           <h2>It's time to ditch Skype and TeamSpeak.</h2>
           <p>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.</p>
           <p>Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life. </p>
         <aside>
-          <span>     
-             <Link to={'/signup'}>Sign up</Link>
-          </span>
-          <span>
-            <Link to={'/login'}>Log in</Link>
+
+          <span className='middle'>
+            <Link to={'/login'}>TRY THIS CLONE</Link>
           </span>
         </aside>
           
         </article>
-         
           
         </div>
       )

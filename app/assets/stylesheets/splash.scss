@@ -1,53 +1,108 @@
 .splash-div {
 display: flex;
 background: image_url('splash/bestsplash.png');
-
+height: 120%;
 justify-content: center;
 color: #ffffff;
 }
 
 .splash-div article{
 display: flex;
+justify-content: center;
 position: absolute;
 top: 100px;
 flex-direction:column;
+}
+.splash-div article h2{
+    align-self: center;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+}
+
+.splash-div article p{
+    align-self: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: hsla(0,0%,100%,.6)
 }
 .splash-div aside {
 display: flex;
 justify-content: space-evenly;
 }
-.splash-div span {
+.middle{
 display: flex;
+align-self: flex-end;
 padding: 5px;
+margin-top: 5px;
 padding-left: 30px;
 padding-right: 30px;
+height: 30px;
 background-color:  #7289da;
+}
+.signup{
+    display: flex;
+    position: absolute;
+    align-self: flex-end; 
+    justify-content  : center;
+    background-color:  #7289da;
+    border-radius: 3px;
+    right: 9%;
+    bottom: -15%;
+    height: 5%;
+    width: 6%;
+    font-size: 15px;
+
+}
+
+.signup a {
+  align-self: center;
 }
 
 .upper-right-header{
+display: flex;
 flex-direction: row;
+justify-content: space-between;
 position: relative;
-right: 21.5%;
-top: 1.5%;
+padding-left: 8%;
+padding-right: 17%;
+top: 1%;
+height: 10%;
+width: 100%
 }
+
 .upper-right-header img{
-  height: 5.5%;
+  width: 18%;
   top: 3%;
   object-fit: contain;
   align-self: center;
 }
 .upper-right-header a{
   position: absolute;
-  margin-top: 1.9%;
+  margin-top: 0.7%;
   margin-left: 1%;
   font-size: 13px;
   color: #CFCFD0;
 }
 
 .upper-right-header a:hover{
-
   color: #ffffff;
+  
 }
+
+.upper-left-header a {
+  border: 2px solid hsla(0,0%,100%,.8);
+  height: 20%;
+  padding-top: 0.2%;
+  padding-bottom: 0.2%;
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+
     /* top: 100%; */
 
        
