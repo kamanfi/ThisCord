@@ -13,7 +13,6 @@ const InviteCodeModal = (props) => {
 
 }
 const msp = (state, ownProps) => {
-  debugger
   return {
     inviteCode: state.entities.currentServer.invite_code
   }

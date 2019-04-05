@@ -12,7 +12,6 @@ class CreateServerModal extends React.Component {
 
   handeleSubmit(e) {
     e.preventDefault();
-    debugger
     this.props.joinServer(this.state).then(dispatch(closeModal()));
   }
 

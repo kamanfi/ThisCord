@@ -6,40 +6,59 @@ class ChatRoom extends React.Component {
     super(props);
     this.state = { messages: [] };
     this.bottom = React.createRef();
+    this.loadChat.bind(this);
   }
 
   componentDidMount() {
+
     App.cable.subscriptions.create(
-      { channel: "ChatChannel" },
+      { channel: "ChatChannel", },
+      // id: this.props 
       {
         received: data => {
-          this.setState({
-            messages: this.state.messages.concat(data.message)
-          });
+          debugger
+          switch (data.type) {
+            case "message":
+            this.setState({
+              messages: this.state.messages.concat(data.message)
+            });
+            break;
+            case "messages":
+            this.setState({ messages: data.messages });
+            break;
+          }
         },
-        speak: function (data) {
-          return this.perform("speak", data);
-        }
+        speak: function (data) { return this.perform("speak", data) },
+        load: function () { return this.perform("load") }
+        
       }
-    );
-  }
-
-  componentDidUpdate() {
+      );
+      this.loadChat();
    
   }
 
+  loadChat() {
+    App.cable.subscriptions.subscriptions[0].load();
+  }
+
+
+  componentDidUpdate() {
+     
+  }
+
   render() {
+    
     const messageList = this.state.messages.map(message => {
-      debugger
       return (
         <li key={message.id}>
-          {message}
+          {message.body}
           <div ref={this.bottom} />
         </li>
       );
     });
+    
     return (
-      <div className="chatroom-container">
+      <div className="test">
         <div>ChatRoom</div>
         <div className="message-list">{messageList}</div>
         <MessageForm />

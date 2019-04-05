@@ -10,8 +10,13 @@
   overflow-x: hidden;
   min-height: 100%;
   max-height: 100%;
+  -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none;  // Firefox
 }
 
+.nav1-aside::-webkit-scrollbar { 
+    display: none;  // Safari and Chrome
+}
 .server-icon{
   position: relative;
   width: 70%;
@@ -32,7 +37,22 @@
   border-radius: 35%;
   border-radius: 33%;
   background-color :#7289DA;
+  transition: 0.25s cubic-bezier(0.60, 0.50, 0.60, 1.50);
 }
+
+.server-icon :focus {
+  border-radius: 35%;
+  border-radius: 33%;
+  background-color :#7289DA;
+  transition: 0.25s cubic-bezier(0.60, 0.50, 0.60, 1.50);
+}
+
+
+  // .server-icon:focus-within {
+  //   border-radius: 35%;
+  //   border-radius: 33%;
+  //   background-color :#7289DA;
+  // }
 
 //home icon
 .home-icon{
@@ -61,19 +81,22 @@
   display: flex;
   width: 60%;
   height: 0%;
-  border: dotted;
+  border: 1px dashed;
   border-radius: 50%;
   justify-content: center;
   color: #535559;
   margin-left: 2%; 
+  font-weight: 300;
+  line-height: 50px;
 }
 
 .add-server:hover{
-  color: #FFFFFF
+  color: #FFFFFF;
+  transition-delay:0.1s;
 }
 
 .add-server p{
-  font-size: 40px;
+  font-size: 35px;
 }
 
 //modal
@@ -83,9 +106,12 @@
   flex-direction: column;
   position: relative;
   justify-content: space-around;
-  margin-top: 15%;
+  margin-top: 1%;
   height: 100%;
   width: 100%;
+  padding-top:5%;
+  padding-left: 3%;
+  padding-right: 3%;
   background-image: image_url('nav1/leftghosts.png');
   background-color: white ;
   border-radius: 1%;
@@ -108,7 +134,8 @@
 .create-server{
   display: flex;
   flex-direction: column;
-  border: solid black 1px;
+  border: 1px solid rgba(0,0,0,.1);
+  box-shadow: #535559;
   border-radius: 3%;
   justify-content: space-evenly;
   padding: 1%;
@@ -117,6 +144,7 @@
   height: 85%;
   width: 40%;
   background-color: #FFFFFF;
+  font-weight: 900; 
 }
 .create-server h1{
   color: #7289DA;
@@ -150,13 +178,13 @@
 
 //join server
 .join-server h1{
-  color: green;
+  color: #3ca374;
   align-self: center;
 }
 .join-server{
   display: flex;
   flex-direction: column;
-  border: solid black 1px;
+  border: 1px solid rgba(0,0,0,.1);
   border-radius: 3%;
   justify-content: space-evenly;
   padding: 1%;
@@ -178,7 +206,7 @@
 }
 
 .join-action{
-    background-color: green;
+    background-color: #3ca374;
     border-radius: 1%;
     padding-left: 20%;
     padding-right: 20%;

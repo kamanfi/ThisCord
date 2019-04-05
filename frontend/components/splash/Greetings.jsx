@@ -21,9 +21,12 @@ class Greeting extends React.Component {
 
         <header className='upper-right-header'>
           <div>
-          <img src={window.logo} alt=""/>
+            <nav>
+                 <img src={window.logo} alt=""    /> 
+                <p>THISCODE</p>
+            </nav>
+       
           <a href="https://github.com/kamanfi/ThisCord">Github</a>
-    
           </div>  
           <div className='upper-left-header'><Link to={'/login'}>Login</Link></div>
           </header>
@@ -40,7 +43,7 @@ class Greeting extends React.Component {
         <aside>
 
           <span className='middle'>
-            <Link to={'/login'}>TRY THIS CLONE</Link>
+            <Link to={'/login'}>TRY THIS-CODE</Link>
           </span>
         </aside>
           

@@ -23,7 +23,7 @@
   height: 100%;
   width: 100%;
   color: #99aab5;
-  font-size: 12px;
+  font-size: 3px;
 }
 
 .server-name{
@@ -33,7 +33,8 @@
   padding-bottom: 50px;
 }
 .name{
-  color: #ffffff;
+
+  font-size: 13px;
 }
 
 .create-container{
@@ -107,6 +108,12 @@
   margin-right: 2%;
   font-size: 16px;
 }
+
+.first_channel img{
+
+  margin-top: 5%;
+
+}
 .channelul{
   display: flex;
   flex-direction: column;
@@ -114,6 +121,7 @@
   margin-left: 4%;
   margin-right: 2%;
   font-size: 16px;
+
 }
 .channels{
   margin-top: 4%;
@@ -121,6 +129,17 @@
   margin-right: 2%;
   font-size: 16px;
 }
+.first_channel:hover{
+  background-color: #42454d;
+  color: #ffffff;
+}
+.nav2 ul li:hover{
+  background-color: #42454d;
+  color: #ffffff;
+}
+
+
+
 .create-container span{
   align-self: center;
   font-size: 14px;

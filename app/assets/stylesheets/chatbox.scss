@@ -1,5 +1,14 @@
 .test{
-  background-color: aquamarine;
-  height: 100%;
-  width: 100%;
+ position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0px;
+    left: 219px;
+    height: 100%;
+    width: 89%;
+    color: black;
+    font-size: 12px;
+    color: #99aab5;
+    background-color: #36393f;
+    font-size: 12px;
 }
