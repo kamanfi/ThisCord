@@ -111,14 +111,17 @@ width: 100%
 .upper-left-header a {
     position: relative;
     border: 2px solid rgba(255, 255, 255, 0.8);
-    height: 20%;
+    height: 20px;
+    width: 60px;
     left: 111%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 25%;
-    padding-right: 60%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 20px;
-     font-size: 14px; 
+    font-size: 14px; 
+    text-align: center;
+    text-justify: center;
 }
 
 
