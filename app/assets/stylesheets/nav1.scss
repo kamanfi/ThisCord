@@ -11,7 +11,7 @@
   min-height: 100%;
   max-height: 100%;
   -ms-overflow-style: none;  // IE 10+
-    scrollbar-width: none;  // Firefox
+  scrollbar-width: none;  // Firefox
 }
 
 .nav1-aside::-webkit-scrollbar { 
@@ -19,18 +19,20 @@
 }
 .server-icon{
   position: relative;
-  width: 70%;
-  height: 6vh;
+  width: 50px;
+  height: 50px;
   margin-bottom: 10px;
   background-color: #2c2f33;  
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  justify-self: center;
+  align-content: center;
+  text-align: center;
+  text-justify: center;
+
 }
 
 .server-icon span{
-  margin-top: 40%;
+  position: relative;
+  top: 14px;
 }
 
 .server-icon:hover {

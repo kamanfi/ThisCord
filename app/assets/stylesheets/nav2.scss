@@ -147,14 +147,27 @@
 .invite_modal{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+    // justify-content: space-between;
   position: relative;
-  
-  height: 80%;
-  width: 80%;
+  margin-top: 20%;
+  padding: 20px;
+  // height: 80%;
+  // width: 80%;
   background-color: #36393F;
   color: #ffffff;
   border-radius: 1%;
+    
+    max-height: 560px; 
+    min-height: 200px;
+    width: 420px;
+}
+
+.invite_modal span{
+  font-size: 12px;
+}
+
+.spanclass{
+  margin-top: 40px;
 }
 
 .invite_modal p{
@@ -162,11 +175,13 @@
   bottom: 40%;
 }
 
-.invite_modal input{
+.invite_modal input{ 
   height: 10%;
-  width: 70%;
+  width: 75%;
   background-color: #2B2F32;
   color: #ffffff;
   font-size: 21px;
+  border-color: solid #7289DA 12px;
   border-radius: 1%;
+
 }
