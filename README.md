@@ -1,24 +1,32 @@
-# README
+# ThisCord
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Site](https://thiscord.herokuapp.com/#/)
 
-Things you may want to cover:
+Thiscode is a full stack clone of the popular chat applciation, discord. Users can make an Servers and Channels and invite their friends to their server.
 
-* Ruby version
+## Technologies
 
-* System dependencies
+Ruby on Rails to implement the backend framework
+Ruby on Rails Action Cables to implement websockets/chat
+PostgreSQL for the database
+React for the Frontend using Redux as the state manager
+jQuery AJAX to access backend through Thunk actions
 
-* Configuration
+## Built With
 
-* Database creation
+* Ruby on Rails to implement the backend framework
+* Ruby on Rails Action Cables to implement websockets/chat
+* PostgreSQL for the database
+* React for the Frontend using Redux as the state manager
+* jQuery AJAX to access backend
 
-* Database initialization
 
-* How to run the test suite
+## Core Functionality
 
-* Services (job queues, cache servers, search engines, etc.)
+Core Functionality
+User Authentication - Users who are able to log in to Discone and gain access to exclusive MiTube features.
+Servers - Authenticated users can create Servers and invite other users to iy
+Channels - Moderators of Servers can create channels which users can join 
+Chat - Users can chat to other users who have joined a channel
 
-* Deployment instructions
-
-* ...
+## Upcoming Features
