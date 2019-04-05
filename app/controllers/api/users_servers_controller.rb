@@ -23,7 +23,7 @@ class Api::UsersServersController < ApplicationController
   private 
   
   def user_server_params
-    # debugger
+
     params.require(:users_server).permit(:server_id, :user_id)
   end
 end

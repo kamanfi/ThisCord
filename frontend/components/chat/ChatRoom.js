@@ -16,7 +16,7 @@ class ChatRoom extends React.Component {
       // id: this.props 
       {
         received: data => {
-          debugger
+         
           switch (data.type) {
             case "message":
             this.setState({

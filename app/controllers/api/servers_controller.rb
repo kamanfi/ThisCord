@@ -10,7 +10,7 @@ class Api::ServersController < ApplicationController
   def create
     @server = Server.new(server_params)
     @server.moderator_id = current_user.id
-    # debugger
+ 
     if @server.save
         @users_server = UsersServer.new({user_id: current_user.id, server_id: @server.id})
         @general_channel = TextChannel.new({name: 'general', server_id: @server.id})
@@ -46,7 +46,7 @@ class Api::ServersController < ApplicationController
   private 
   
   def server_params
-    # debugger
+
     params.require(:server).permit(:server_name, :moderator_id, :img_url, :invite_code)
   end
 end
