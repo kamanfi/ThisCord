@@ -56,12 +56,16 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  
   height: 80%;
   width: 80%;
   background-color: #2C2F33;
   color: #99aab5;
   border-radius: 1%;
+  
+}
+
+.create-channel-background h1{
+  padding: 2%;  
 }
 .field {
   margin: 3%;
@@ -163,11 +167,16 @@
 }
 
 .invite_modal span{
+
   font-size: 12px;
 }
 
+.spanclass2{
+  margin-top: 5px;
+}
 .spanclass{
   margin-top: 40px;
+  margin-bottom: 5px;
 }
 
 .invite_modal p{

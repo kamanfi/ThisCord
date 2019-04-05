@@ -43,7 +43,7 @@ class CreateServerModal extends React.Component {
         </label>
         <label className="lower-container2">
           <button onClick={() => dispatch(openModal('option'))}>Back</button>
-          <button onClick={this.handeleSubmit}>Create</button>
+          <button onClick={this.handeleSubmit}>Join</button>
         </label>
       </form>
 
