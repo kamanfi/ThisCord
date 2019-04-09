@@ -13,7 +13,8 @@ class ChatChannel < ApplicationCable::Channel
     channel = TextChannel.find(data['message']['channelId'])
     message = Message.new(body: data['message']['body'], channel_type: 'text', author_id: data['message']['userId'], channel_id: data['message']['channelId'])
     if (message.save!)
-      socket = { message: message, type: 'message' }
+      author = [message.author.user_name]
+      socket = { message: message, type: 'message', authors: author }
       ChatChannel.broadcast_to(channel, socket)
     end
   end

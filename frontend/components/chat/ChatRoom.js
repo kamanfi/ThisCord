@@ -33,7 +33,8 @@ class ChatRoom extends React.Component {
             switch (data.type) {
               case "message":
               this.setState({
-                messages: this.state.messages.concat(data.message)
+                messages: this.state.messages.concat(data.message),
+                authors: this.state.authors.concat(data.authors)
               });
               break;
               case "messages":
@@ -73,11 +74,11 @@ class ChatRoom extends React.Component {
   render() {
 
     debugger
-    let authors = this.state.authors;
+    let authors = this.state.authors.slice();
     const messageList = this.state.messages.map(message => {
       return (
         <li key={message.id}>
-          {message.body} {authors.shift()}
+         {authors.shift()}  {message.body} {message.created_at}
           <div ref={this.bottom} />
         </li>
       );
