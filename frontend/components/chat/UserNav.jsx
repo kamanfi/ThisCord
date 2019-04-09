@@ -1,6 +1,11 @@
 import React from 'react';
 const UserNav = ({ username, logout}) => {
   
+
+  const unsub =() =>{
+    logout()
+    
+  }
   return (
     <nav className='user-nav'>
 

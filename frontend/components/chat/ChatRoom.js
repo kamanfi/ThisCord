@@ -1,70 +1,99 @@
 import React from "react";
 import MessageForm from "./MessageForm.js";
+import { withRouter } from 'react-router-dom';
 
 class ChatRoom extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { messages: [] };
-    this.bottom = React.createRef();
-    this.loadChat.bind(this);
+    this.state = { messages: [] , authors: []};
+    this.load.bind(this);
+    this.subscribe.bind(this);
+
+
   }
 
-  componentDidMount() {
+  load(id) {
 
-    App.cable.subscriptions.create(
-      { channel: "ChatChannel", },
-      // id: this.props 
-      {
-        received: data => {
-         
-          switch (data.type) {
-            case "message":
-            this.setState({
-              messages: this.state.messages.concat(data.message)
-            });
-            break;
-            case "messages":
-            this.setState({ messages: data.messages });
-            break;
-          }
-        },
-        speak: function (data) { return this.perform("speak", data) },
-        load: function () { return this.perform("load") }
+    debugger
+       App.cable.subscriptions.subscriptions[0].load(id); // why is this returning false???
+    }
+
+    subscribe () {
+      
+      if (App.cable.subscriptions['subscriptions'].length > 1) {
+        App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][1]);
+    };
+      debugger
+      App.cable.subscriptions.create(
+        { channel: "ChatChannel", id: this.props.match.params.channelId},
         
+        {
+          received: data => {
+
+            switch (data.type) {
+              case "message":
+              this.setState({
+                messages: this.state.messages.concat(data.message)
+              });
+              break;
+              case "messages":
+             
+                this.setState({ messages: data.messages, authors: data.authors });
+
+              break;
+            }
+          },
+          speak: function (data) { return this.perform("speak", data) },
+          load: function (id) { return this.perform("load"), id },
+          unsubscribe: function() {  App.cable.subscriptions.remove(this)}
+        }
+        );
+        
+    }
+
+    componentWillUnmount(){
+      
+      App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][0]);
+    }
+
+    componentDidUpdate(prevProps){
+      debugger
+      if (prevProps.match.params.channelId != this.props.match.params.channelId) {
+ 
+          App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][0]);
+       this.subscribe();
       }
-      );
-      this.loadChat();
-   
-  }
+    }
+    componentDidMount(){
 
-  loadChat() {
-    App.cable.subscriptions.subscriptions[0].load();
-  }
-
-
-  componentDidUpdate() {
-     
-  }
+        this.subscribe();
+    
+    }
 
   render() {
-    
+
+    debugger
+    let authors = this.state.authors;
     const messageList = this.state.messages.map(message => {
       return (
         <li key={message.id}>
-          {message.body}
+          {message.body} {authors.shift()}
           <div ref={this.bottom} />
         </li>
       );
     });
     
     return (
+
       <div className="test">
         <div>ChatRoom</div>
         <div className="message-list">{messageList}</div>
         <MessageForm />
+        <div>WTF</div>
+    
       </div>
     );
   }
 }
 
-export default ChatRoom;
+export default withRouter(ChatRoom);

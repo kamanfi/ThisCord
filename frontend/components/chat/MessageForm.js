@@ -4,16 +4,17 @@ import { connect } from 'react-redux';
 
 class MessageForm extends React.Component {
   constructor(props) {
+    debugger
     super(props);
     this.state = { body: "",
       userId: this.props.userId,
-      channelId: this.props.match.params.channelId
+      channelId: ""
   };      
   }
 
   update(field) {
     return e =>
-      this.setState({ [field]: e.currentTarget.value });
+      this.setState({ [field]: e.currentTarget.value, channelId: this.props.match.params.channelId });
   }
 
   handleSubmit(e) {
@@ -21,7 +22,7 @@ class MessageForm extends React.Component {
     App.cable.subscriptions.subscriptions[0].speak({ message: this.state });
     this.setState({ body: "" });
   }
-
+  
   render() {
     return (
       <div>

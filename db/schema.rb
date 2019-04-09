@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_135709) do
+ActiveRecord::Schema.define(version: 2019_04_09_160127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2019_04_04_135709) do
     t.integer "author_id", null: false
     t.string "body", null: false
     t.integer "channel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_messages_on_author_id"
   end
 
@@ -37,6 +39,8 @@ ActiveRecord::Schema.define(version: 2019_04_04_135709) do
   create_table "text_channels", force: :cascade do |t|
     t.string "name", null: false
     t.integer "server_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["server_id"], name: "index_text_channels_on_server_id"
   end
 
@@ -56,6 +60,8 @@ ActiveRecord::Schema.define(version: 2019_04_04_135709) do
   create_table "users_servers", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "server_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id", "server_id"], name: "index_users_servers_on_user_id_and_server_id"
   end
 

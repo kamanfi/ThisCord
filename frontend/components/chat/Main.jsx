@@ -1,8 +1,11 @@
 import React from 'react';
 import Nav1 from './Nav1';
 import UserNav from './UserNav';
+import Home from '../home/Home'
+import DirectMessage from '../home/Directmessage'
 import {selectsServer }from '../../actions/current_server_actions';
 import { Link } from 'react-router-dom';
+import ChatBox from './ChatBox';
 
 
 
@@ -14,31 +17,21 @@ class Main extends React.Component{
   }
   
   componentDidMount(){
-    
-    
-    this.props.fetchServers().then((info) => {
-
-      if (Object.values(info.servers).length > 1){
-      const id =Object.values(info.servers)[0].id;
-      const invite_code = Object.values(info.servers)[0].invite_code;
-      const server_name = Object.values(info.servers)[0].server_name;
-      dispatch(selectsServer({ id, invite_code, server_name }));
-      this.props.fetchTextChannels(id).then(this.props.history.push(`/@me/${id}`));
-      this.props.history.push(`/@me/${id}/${0}`);
-      }else
-        this.props.fetchServers();
-    });
+    this.props.fetchServers();
     
   }
 
 
   render() {
- 
     
+    if (this.props.servers)
     return  (
       < div>
         < Nav1 servers={this.props.servers} fetchTextChannels={this.props.fetchTextChannels}/>
         < UserNav username={this.props.currentUser[0]} logout={this.props.logout} />
+        < DirectMessage />
+        < Home />
+        
       </div >
     ) 
     
