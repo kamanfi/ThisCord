@@ -26,11 +26,8 @@ class Main extends React.Component{
     
     if (this.props.servers)
     return  (
-      < div>
+      < div className='mainh'>
         < Nav1 servers={this.props.servers} fetchTextChannels={this.props.fetchTextChannels}/>
-        < UserNav username={this.props.currentUser[0]} logout={this.props.logout} />
-        < DirectMessage />
-        < Home />
         
       </div >
     ) 

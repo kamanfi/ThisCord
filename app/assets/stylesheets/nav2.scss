@@ -1,19 +1,16 @@
-
-.nav2{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 0px;
-    left: 75px;
-    height: 96%;
-    width: 12.50%;
-    padding-bottom: 1%;
-    color: #99aab5;
-    background-color: #2F3136;
-    font-size: 12px;
+.nav2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+  /* left: 75px; */
+  height: 94.3%;
+  /* width: 12.50%; */
+  padding-bottom: 1%;
+  color: #99aab5;
+  background-color: #2F3136;
+  font-size: 12px;
 }
-
-
 
 .channel{
   flex-direction: row;
@@ -193,4 +190,15 @@
   border-color: solid #7289DA 12px;
   border-radius: 1%;
 
+}
+
+//TESTING
+.holder{
+  display: flex;
+  flex-direction: column;
+  width: 12.2%;
+}
+
+.mainh{
+  display: flex
 }

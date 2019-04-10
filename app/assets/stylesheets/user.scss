@@ -1,23 +1,23 @@
-.user-nav{
-    position: absolute;
+.user-nav {
+    position: relative;
     display: flex;
     flex-direction: row;
-    bottom: 0px;
-    left: 75px;
-    height: 3%;
-    width: 12%;
-    padding-left: 0.5%;
-    padding-top: 0.5%;
-    padding-bottom: 1%;
+    /* bottom: 0px; */
+    /* left: 75px; */
+    height: 5.7%;
+    /* width: 12%; */
+    /* padding-left: 0.5%; */
+    /* padding-top: 0.5%; */
+    /* padding-bottom: 1%; */
     color: #99aab5;
     background-color: #2A2D30;
     font-size: 12px;
 }
-.name-container{
-display: flex;
-flex-direction: column;
-cursor: pointer;
-
+name-container {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 4%;
 }
 .gear-container{
     width:20%;
@@ -30,9 +30,8 @@ cursor: pointer;
     cursor: pointer;
 }
 
-.gear-container img{
-
-    height: 100%;  
+.gear-container img {
+    height: 70%;
     border-radius: 100%;
     object-fit: contain;
     align-self: center;

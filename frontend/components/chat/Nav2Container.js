@@ -8,7 +8,8 @@ const msp = (state, ownProps) => {
 
     return {
       textChannels: Object.values(state.entities.textChannels),
-      server: state.entities.servers[ownProps.match.params.serverId]
+      server: state.entities.servers[ownProps.match.params.serverId],
+      currentUser: Object.values(state.entities.users[state.session.id])
     };
   }
   
