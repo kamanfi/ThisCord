@@ -1,8 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import ChatRoom from './ChatRoom';
-import Nav3 from './Nav3';
-const ChatBox = () =>{
+
+const Nav3 = () =>{
 
   return(
     <div className='chatParent'>
@@ -12,4 +11,4 @@ const ChatBox = () =>{
 }
 
 
-export default withRouter(ChatBox);
+export default (Nav3);

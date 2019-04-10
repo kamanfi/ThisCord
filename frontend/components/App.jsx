@@ -9,7 +9,7 @@ import { AuthRoute,ProtectedRoute } from '../util/routeUtil';
 import ChatBox from '../components/chat/ChatBox';
 
 const App = () => (
-  <div>
+  <div className='initial'>
     
     <Switch>
       <AuthRoute exact path='/signup' component={SignUp} />
@@ -17,7 +17,7 @@ const App = () => (
       <AuthRoute exact path='/' component={Greetings} />
     </Switch>
     
-
+    
       <ProtectedRoute exact path='/@me' component={Main} />
       <ProtectedRoute exact path='/@me/:serverId' component={Nav2} />
       <ProtectedRoute exact path='/@me/:serverId/:channelId' component={ChatBox}/>

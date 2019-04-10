@@ -7,7 +7,7 @@ const Home  = () => {
 
 
     return(
-        <div className='test'>
+        <div className='dm'>
             WELCOME TO DISCORD
         </div>
     )

@@ -88,13 +88,12 @@ class ChatRoom extends React.Component {
 
       <div className="test">
         <div>ChatRoom</div>
-        <div className="message-list">{messageList}</div>
+        <div className="">{messageList}</div>
         <MessageForm />
-        <div>WTF</div>
-    
       </div>
     );
   }
 }
 
 export default withRouter(ChatRoom);
+

@@ -26,7 +26,8 @@ class MessageForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        start
+        <form className='inputform' onSubmit={this.handleSubmit.bind(this)}>
           <input
             type="text"
             value={this.state.body}

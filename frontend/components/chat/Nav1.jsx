@@ -3,7 +3,7 @@ import ServerModal from './serverModal/ServerModal';
 import Modal from '../modals/Modal';
 import {openModal} from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {withRouter, NavLink} from 'react-router-dom';
 import DefaultModal from './serverModal/DefaultModal';
 import { selectsServer } from '../../actions/current_server_actions';
 
@@ -41,9 +41,9 @@ class Nav1  extends React.Component{
 
     return (
       <aside className='nav1-aside'>
-        <span className='home-icon'> 
+        <NavLink to={'/@me/dm'} className='home-icon'> 
           <img src={window.homeicon2} alt=""/>
-        </span>
+        </NavLink>
         <hr/>
         <ul>
         {lis}
