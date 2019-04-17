@@ -14,7 +14,7 @@ class ChatRoom extends React.Component {
 
   load(id) {
 
-    debugger
+    
        App.cable.subscriptions.subscriptions[0].load(id); // why is this returning false???
     }
 
@@ -23,7 +23,7 @@ class ChatRoom extends React.Component {
       if (App.cable.subscriptions['subscriptions'].length > 1) {
         App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][1]);
     };
-      debugger
+      
       App.cable.subscriptions.create(
         { channel: "ChatChannel", id: this.props.match.params.channelId},
         
@@ -58,7 +58,7 @@ class ChatRoom extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-      debugger
+      
       if (prevProps.match.params.channelId != this.props.match.params.channelId) {
  
           App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][0]);
@@ -73,7 +73,7 @@ class ChatRoom extends React.Component {
 
   render() {
 
-    debugger
+    
     let authors = this.state.authors.slice();
     const messageList = this.state.messages.map(message => {
       return (

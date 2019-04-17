@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import {NavLink} from 'react-router-dom';
 import { selectsServer } from '../../actions/current_server_actions';
-import UserNav from './UserNav';
+import UserNav from './UserNavContainer';
 
 class Nav2 extends React.Component{
 
@@ -49,7 +49,7 @@ class Nav2 extends React.Component{
       </ul>
       
     </nav>
-    < UserNav username={this.props.currentUser[0]} logout={this.props.logout} />
+    < UserNav />
     </div>
   )
 }  

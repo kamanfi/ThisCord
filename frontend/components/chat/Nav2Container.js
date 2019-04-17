@@ -1,6 +1,7 @@
 import Nav2 from './Nav2';
 import { connect } from 'react-redux';
 import { fetchTextChannels } from '../../actions/textChannel_actions';
+import { logout } from '../../actions/session_actions';
 
 
 
@@ -17,7 +18,8 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
 
   return {
-    fetchTextChannels: (id) => dispatch(fetchTextChannels(id))
+    fetchTextChannels: (id) => dispatch(fetchTextChannels(id)),
+    logout: () => dispatch(logout())
   };
 };
 

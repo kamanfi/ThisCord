@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
 
   handelSubmit(e){
     e.preventDefault();
-    this.props.action(this.state).then( () =>this.props.history.push('/@me'));
+    this.props.action(this.state).then( () =>this.props.history.push('/@me/dm'));
   }
 
   handelChange(field){
@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
       email: 'demoUser1@demoUser.com',
       password: '1234567'
     };
-    this.props.action(demouser).then(() => this.props.history.push('/@me'));
+    this.props.action(demouser).then(() => this.props.history.push('/@me/dm'));
 
   }
 

@@ -1,11 +1,12 @@
 import React from 'react';
-const UserNav = ({ username, logout}) => {
+const UserNav = ({ user, logout}) => {
   
 
   const unsub =() =>{
-    logout()
+    logout();
     
   }
+  
   return (
     <nav className='user-nav'>
 
@@ -13,7 +14,7 @@ const UserNav = ({ username, logout}) => {
         <img src={window.homeicon2} alt="" />
       </div>
       <div className='name-container'>
-        <ul>{username}</ul>
+        <ul>{user[0]}</ul>
         <div onClick={logout}>logout</div>
       </div>
 

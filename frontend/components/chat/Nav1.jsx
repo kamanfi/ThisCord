@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import DefaultModal from './serverModal/DefaultModal';
 import { selectsServer } from '../../actions/current_server_actions';
-
+import {NavLink} from 'react-router-dom';
 
 class Nav1  extends React.Component{
 
@@ -32,6 +32,11 @@ class Nav1  extends React.Component{
       );
   }
 
+  home(){
+    debugger
+    this.props.history.push(`/@me/dm/`);
+  }
+
   render(){
     
 
@@ -41,9 +46,9 @@ class Nav1  extends React.Component{
 
     return (
       <aside className='nav1-aside'>
-        <span className='home-icon'> 
+       <NavLink to={`/@me/dm`} className='home-icon'> 
           <img src={window.homeicon2} alt=""/>
-        </span>
+          </NavLink>
         <hr/>
         <ul>
         {lis}

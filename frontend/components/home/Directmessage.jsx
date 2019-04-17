@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import UserNav from '../chat/UserNavContainer';
 
 const DirectMessages  = () => {
 
@@ -7,9 +7,10 @@ const DirectMessages  = () => {
 
 
     return(
-        <div className='nav2'>
-           TEST
+        <div className='dm'>
+            < UserNav />
         </div>
+ 
     )
 } 
 
