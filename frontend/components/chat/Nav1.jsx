@@ -32,10 +32,7 @@ class Nav1  extends React.Component{
       );
   }
 
-  home(){
-    debugger
-    this.props.history.push(`/@me/dm/`);
-  }
+
 
   render(){
     

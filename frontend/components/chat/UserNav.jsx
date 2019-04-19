@@ -15,7 +15,7 @@ const UserNav = ({ user, logout}) => {
       </div>
       <div className='name-container'>
         <ul>{user[0]}</ul>
-        <div onClick={logout}>logout</div>
+        <div className='login' onClick={logout}>logout</div>
       </div>
 
 

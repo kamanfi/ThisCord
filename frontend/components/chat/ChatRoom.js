@@ -1,14 +1,15 @@
 import React from "react";
 import MessageForm from "./MessageForm.js";
 import { withRouter } from 'react-router-dom';
+// import MessageFormat from './MessageFormat'
 
 class ChatRoom extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { messages: [] , authors: []};
+    this.state = { messages: [] , authors: [], dates: [] };
     this.load.bind(this);
     this.subscribe.bind(this);
-
+    
 
   }
 
@@ -34,12 +35,13 @@ class ChatRoom extends React.Component {
               case "message":
               this.setState({
                 messages: this.state.messages.concat(data.message),
-                authors: this.state.authors.concat(data.authors)
+                authors: this.state.authors.concat(data.authors),
+                date: this.state.authors.concat(data.date)
               });
               break;
               case "messages":
              
-                this.setState({ messages: data.messages, authors: data.authors });
+                this.setState({ messages: data.messages, authors: data.authors, dates: data.dates });
 
               break;
             }
@@ -71,27 +73,36 @@ class ChatRoom extends React.Component {
     
     }
 
+    formatMassage(messageList){
+      
+    }
+
   render() {
 
-    
     let authors = this.state.authors.slice();
+    debugger
+    let dates = this.state.dates.slice();
     const messageList = this.state.messages.map(message => {
+      debugger
       return (
-        <li key={message.id}>
-         {authors.shift()}  {message.body} {message.created_at}
+        <div className= 'messageHolder' key={message.id}>
+          
+          <div className ='user-micon'></div> 
+
+        <li className='message'>
+          <span> <aside className='author_name'>{authors.shift()} </aside>  <aside className='date'>{dates.shift()} </aside></span>
+          <div>{message.body} </div>
           <div ref={this.bottom} />
         </li>
+        </div>
       );
     });
     
     return (
 
-      <div className="test">
-        <div>ChatRoom</div>
-        <div className="message-list">{messageList}</div>
+      <div className='message-holder'>
+        <div className='message-list'> <ul> {messageList}</ul> </div>
         <MessageForm />
-        <div>WTF</div>
-    
       </div>
     );
   }
