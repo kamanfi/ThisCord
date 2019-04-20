@@ -11,12 +11,17 @@ class ChatChannel < ApplicationCable::Channel
     # find channel sv it as channel 
     channel = TextChannel.find(data['message']['channelId'])
     message = Message.new(body: data['message']['body'], channel_type: 'text', author_id: data['message']['userId'], channel_id: data['message']['channelId'])
+    lastmsg = Message.last
+    append = false
     if (message.save!)
-      
+      if lastmsg.author_id == message.author_id && (message.created_at - lastmsg.created_at) < 300
+        append = true
+      end
       date = message.created_at.strftime("%A %m/%d/%Y")
-      debugger
+      formattedMessage = [] 
+      formattedMessage << [message.body]
       author = [message.author.user_name]
-      socket = { message: message, type: 'message', dates: date }
+      socket = { message: formattedMessage, type: 'message', authors: author, dates: date, append: append }
       ChatChannel.broadcast_to(channel, socket)
     end
   end
@@ -26,15 +31,26 @@ class ChatChannel < ApplicationCable::Channel
     channel = TextChannel.includes(:messages).find(id)
     messages = channel.messages.includes(:author)
     date = [];
-    authors = messages.map do |msg|
+    authors =[]
+    formattedMessage =[]
+    lastmsg = nil
+      messages.each do |msg|
       date << msg.created_at.strftime("%A %m/%d/%Y")
-      msg.author.user_name
+      authors << msg.author.user_name
+  
+      if lastmsg && lastmsg.author_id == msg.author_id && (msg.created_at - lastmsg.created_at) < 300
+        formattedMessage.last.push(msg.body)
+      else
+  
+        formattedMessage <<  [msg.body]
+      end
+      lastmsg = msg
     end
     
-    if (messages)
+    if (formattedMessage)
 
       channel = TextChannel.find(id)
-      socket = { messages: messages, type: 'messages', authors: authors, dates: date }
+      socket = { messages: formattedMessage, type: 'messages', authors: authors, dates: date }
       ChatChannel.broadcast_to(channel, socket)
     end
       

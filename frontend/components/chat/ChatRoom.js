@@ -9,7 +9,7 @@ class ChatRoom extends React.Component {
     this.state = { messages: [] , authors: [], dates: [] };
     this.load.bind(this);
     this.subscribe.bind(this);
-    
+    this.bottom = React.createRef();
 
   }
 
@@ -24,20 +24,28 @@ class ChatRoom extends React.Component {
       if (App.cable.subscriptions['subscriptions'].length > 1) {
         App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][1]);
     };
-      
+    
       App.cable.subscriptions.create(
         { channel: "ChatChannel", id: this.props.match.params.channelId},
         
         {
           received: data => {
-
+            
             switch (data.type) {
               case "message":
-              this.setState({
-                messages: this.state.messages.concat(data.message),
-                authors: this.state.authors.concat(data.authors),
-                date: this.state.authors.concat(data.date)
-              });
+              if (data.append){
+                let newMessage = this.state.messages;
+                newMessage[newMessage.length-1].push(data.message);
+                this.setState({
+                  messages: newMessage
+                });
+              }else{
+                this.setState({
+                  messages: this.state.messages.concat(data.message),
+                  authors: this.state.authors.concat(data.authors),
+                  date: this.state.authors.concat(data.date)
+                });
+              }
               break;
               case "messages":
              
@@ -60,40 +68,43 @@ class ChatRoom extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-      
+      debugger
+      if (this.bottom.current){
+        this.bottom.current.scrollIntoView();  
+      }
       if (prevProps.match.params.channelId != this.props.match.params.channelId) {
  
           App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][0]);
        this.subscribe();
       }
+
     }
     componentDidMount(){
 
         this.subscribe();
+    }
     
-    }
-
-    formatMassage(messageList){
-      
-    }
-
+  
   render() {
-
-    let authors = this.state.authors.slice();
     debugger
+    let authors = this.state.authors.slice();
     let dates = this.state.dates.slice();
     const messageList = this.state.messages.map(message => {
-      debugger
+      
       return (
         <div className= 'messageHolder' key={message.id}>
           
           <div className ='user-micon'></div> 
 
-        <li className='message'>
+        <div className='message'>
           <span> <aside className='author_name'>{authors.shift()} </aside>  <aside className='date'>{dates.shift()} </aside></span>
-          <div>{message.body} </div>
+          {message.map(body => {
+            return (
+              <li>{body}</li>
+            )
+          })}
           <div ref={this.bottom} />
-        </li>
+        </div>
         </div>
       );
     });
