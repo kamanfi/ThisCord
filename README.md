@@ -2,6 +2,8 @@
 
 [Live Site](https://thiscord.herokuapp.com/#/)
 
+![](/app/assets/images/Readme/logIn.png)
+
 Thiscode is a full stack clone of the popular chat applciation, discord. Users can make an Servers and Channels and invite their friends to their server.
 
 ## Technologies
