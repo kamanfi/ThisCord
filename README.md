@@ -26,9 +26,11 @@ jQuery AJAX to access backend through Thunk actions
 ## Core Functionality
 
 Core Functionality
-User Authentication - Users who are able to log in to Discone and gain access to exclusive MiTube features.
-Servers - Authenticated users can create Servers and invite other users to iy
+User Authentication - Users are able to create account and log in
+Servers - Authenticated users can create Servers and invite other users to it
 Channels - Moderators of Servers can create channels which users can join 
 Chat - Users can chat to other users who have joined a channel
 
 ## Upcoming Features
+DM
+Voice Chat
