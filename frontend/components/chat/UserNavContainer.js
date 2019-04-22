@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 
 const msp = state => {
-    debugger
+    
     return {
         user: Object.values(state.entities.users[state.session.id])
     };

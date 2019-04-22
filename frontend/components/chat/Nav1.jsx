@@ -28,7 +28,7 @@ class Nav1  extends React.Component{
   selectServer({ id, invite_code, server_name}){
     dispatch(selectsServer({ id, invite_code, server_name}));
     this.props.fetchTextChannels(id).then(
-      (what) => this.props.history.push(`/@me/${id}/${(Object.values(what.text_channels)[0].id)}`)
+      (what) => this.props.history.push(`/@me/${id}/${(Object.values(what.text_channels)[0].id)}/general`)
       );
   }
 

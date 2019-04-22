@@ -3,12 +3,12 @@ import { withRouter } from 'react-router-dom';
 
 const TitleInfo = (props) =>{
 
-
+    debugger
     return(
-        <div>
-            {props.serverName}
+        <div className ="titleInfoBox">
+            <span># {props.name}</span>
         </div>
     )
 }
 
-export default withRouter(withRouter(TitleInfo))
+export default TitleInfo

@@ -1,12 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ChatRoom from './ChatRoom';
-import TitleInfo from './TitleInfoContainer';
-const ChatBox = () =>{
-
+import TitleInfo from './TitleInfo';
+const ChatBox = (props) =>{
+  debugger
   return(
     <div className='test'>
-    {/* <TitleInfo /> */}
+    <TitleInfo name={props.match.params.name}/> 
       <ChatRoom />
     </div>
   )

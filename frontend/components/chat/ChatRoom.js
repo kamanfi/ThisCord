@@ -68,7 +68,7 @@ class ChatRoom extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-      debugger
+      
       if (this.bottom.current){
         this.bottom.current.scrollIntoView();  
       }
@@ -86,7 +86,7 @@ class ChatRoom extends React.Component {
     
   
   render() {
-    debugger
+    
     let authors = this.state.authors.slice();
     let dates = this.state.dates.slice();
     const messageList = this.state.messages.map(message => {
@@ -110,11 +110,14 @@ class ChatRoom extends React.Component {
     });
     
     return (
-
+      
+  
+      
       <div className='message-holder'>
         <div className='message-list'> <ul> {messageList}</ul> </div>
         <MessageForm />
       </div>
+ 
     );
   }
 }

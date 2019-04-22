@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class MessageForm extends React.Component {
   constructor(props) {
-    debugger
+    
     super(props);
     this.state = { body: "",
       userId: this.props.userId,

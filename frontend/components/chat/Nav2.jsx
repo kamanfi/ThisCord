@@ -30,7 +30,7 @@ class Nav2 extends React.Component{
    
  
     const lis = this.props.textChannels.map( ({id, name}) => {
-    return <NavLink to={`/@me/${this.props.match.params.serverId}/${id}`} key={id} ># <span className='name'>{name}</span> </NavLink>
+    return <NavLink to={`/@me/${this.props.match.params.serverId}/${id}/${name}`} key={id} name={name} ># <span className='name'>{name}</span> </NavLink>
     });
     
     return(
