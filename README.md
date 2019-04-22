@@ -2,7 +2,7 @@
 
 [Live Site](https://thiscord.herokuapp.com/#/)
 
-![Alt text](app/assets/images/nav1/homeicon2.pngraw=true "Optional Title")
+![](/app/assets/images/Readme/logIn.png)
 
 Thiscode is a full stack clone of the popular chat applciation, discord. Users can make an Servers and Channels and invite their friends to their server.
 
