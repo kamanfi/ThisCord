@@ -25,6 +25,7 @@ class ChatRoom extends React.Component {
         App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][1]);
     };
     
+    debugger
       App.cable.subscriptions.create(
         { channel: "ChatChannel", id: this.props.match.params.channelId},
         
@@ -33,7 +34,7 @@ class ChatRoom extends React.Component {
             
             switch (data.type) {
               case "message":
-              if (data.append){
+              if (data.append === true){
                 let newMessage = this.state.messages;
                 newMessage[newMessage.length-1].push(data.message);
                 this.setState({
@@ -43,7 +44,7 @@ class ChatRoom extends React.Component {
                 this.setState({
                   messages: this.state.messages.concat(data.message),
                   authors: this.state.authors.concat(data.authors),
-                  date: this.state.authors.concat(data.date)
+                  dates: this.state.dates.concat(data.dates)
                 });
               }
               break;
@@ -86,7 +87,7 @@ class ChatRoom extends React.Component {
     
   
   render() {
-    
+    debugger
     let authors = this.state.authors.slice();
     let dates = this.state.dates.slice();
     const messageList = this.state.messages.map(message => {
