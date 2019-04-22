@@ -35,7 +35,7 @@ class ChatChannel < ApplicationCable::Channel
     formattedMessage =[]
     lastmsg = nil
       messages.each do |msg|
-      if lastmsg && lastmsg.author_id == msg.author_id && (msg.created_at - lastmsg.created_at) < 300
+      if lastmsg && lastmsg.author_id == msg.author_id && (msg.created_at - lastmsg.created_at) < 100
         formattedMessage.last.push(msg.body)
       else
         authors << msg.author.user_name
