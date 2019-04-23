@@ -1,6 +1,7 @@
 import React from "react";
 import MessageForm from "./MessageForm.js";
 import { withRouter } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 // import MessageFormat from './MessageFormat'
 
 class ChatRoom extends React.Component {
@@ -85,7 +86,7 @@ class ChatRoom extends React.Component {
         this.subscribe();
     }
     
-  
+
   render() {
     debugger
     let authors = this.state.authors.slice();
@@ -98,7 +99,7 @@ class ChatRoom extends React.Component {
           <div className ='user-micon'></div> 
 
         <div className='message'>
-          <span> <aside className='author_name'>{authors.shift()} </aside>  <aside className='date'>{dates.shift()} </aside></span>
+          <span> <NavLink to={`/@me/dm/`} className='author_name'>{authors.shift()} </NavLink>  <aside className='date'>{dates.shift()} </aside></span>
           {message.map(body => {
             return (
               <li>{body}</li>
