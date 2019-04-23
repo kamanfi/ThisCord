@@ -13,11 +13,12 @@
     background-color: #2A2D30;
     font-size: 12px;
 }
-name-container {
+.name-container {
     display: flex;
     flex-direction: column;
     cursor: pointer;
     margin-top: 4%;
+    height: 1%;
 }
 .gear-container{
     width:20%;
@@ -27,7 +28,6 @@ name-container {
     flex-direction: row;
     justify-content: space-evenly;
     justify-items: center;
-    cursor: pointer;
 }
 
 .gear-container img {
@@ -35,4 +35,9 @@ name-container {
     border-radius: 100%;
     object-fit: contain;
     align-self: center;
+}
+
+.logout{
+    cursor: pointer;
+    height: 10%;
 }
