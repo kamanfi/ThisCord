@@ -18,10 +18,12 @@ class ChatChannel < ApplicationCable::Channel
         append = true
       end
       date = [message.created_at.strftime("%A %m/%d/%Y")]
-      formattedMessage = [] 
+      formattedMessage = []
+      ids =[]
+      ids << [msg.author.id] 
       formattedMessage << [message.body]
       author = [message.author.user_name]
-      socket = { message: formattedMessage, type: 'message', authors: author, dates: date, append: append }
+      socket = { message: formattedMessage, type: 'message', authors: author, dates: date, append: append, ids: ids }
       ChatChannel.broadcast_to(channel, socket)
     end
   end
@@ -33,6 +35,7 @@ class ChatChannel < ApplicationCable::Channel
     date = [];
     authors =[]
     formattedMessage =[]
+    ids =[]
     lastmsg = nil
       messages.each do |msg|
       if lastmsg && lastmsg.author_id == msg.author_id && (msg.created_at - lastmsg.created_at) < 100
@@ -41,6 +44,7 @@ class ChatChannel < ApplicationCable::Channel
         authors << msg.author.user_name
         formattedMessage <<  [msg.body]
         date << msg.created_at.strftime("%A %m/%d/%Y")
+        ids << msg.author.id
       end
       lastmsg = msg
     end
@@ -48,7 +52,7 @@ class ChatChannel < ApplicationCable::Channel
     if (formattedMessage)
 
       channel = TextChannel.find(id)
-      socket = { messages: formattedMessage, type: 'messages', authors: authors, dates: date }
+      socket = { messages: formattedMessage, type: 'messages', authors: authors, dates: date, ids: ids }
       ChatChannel.broadcast_to(channel, socket)
     end
       

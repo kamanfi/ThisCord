@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create,:destroy]
     resources :servers, only: [:create,:index,:show,:destroy]
     resources :text_channels, only: [:create,:index,:show,:destroy]
+    resources :direct_messages, only: [:create,:index,:show]
       get '/join', to: 'servers#join'
   end
 

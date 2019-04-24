@@ -7,7 +7,7 @@ import {NavLink} from 'react-router-dom';
 class ChatRoom extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { messages: [] , authors: [], dates: [] };
+    this.state = { messages: [] , authors: [], dates: [], ids: [] };
     this.load.bind(this);
     this.subscribe.bind(this);
     this.bottom = React.createRef();
@@ -45,13 +45,14 @@ class ChatRoom extends React.Component {
                 this.setState({
                   messages: this.state.messages.concat(data.message),
                   authors: this.state.authors.concat(data.authors),
-                  dates: this.state.dates.concat(data.dates)
+                  dates: this.state.dates.concat(data.dates),
+                  ids: this.state.concat(data.ids)
                 });
               }
               break;
               case "messages":
              
-                this.setState({ messages: data.messages, authors: data.authors, dates: data.dates });
+                this.setState({ messages: data.messages, authors: data.authors, dates: data.dates, ids: data.ids });
 
               break;
             }
@@ -86,11 +87,17 @@ class ChatRoom extends React.Component {
         this.subscribe();
     }
     
+    sendDM(sender_id){
+      // this.props.history.push(`@me/dm/${sender_id}`);
+      this.props.history.location.pathname =(`/`);
+      this.props.history.push(`@me/dm/${sender_id}`);
+    }
 
   render() {
     debugger
     let authors = this.state.authors.slice();
     let dates = this.state.dates.slice();
+    let ids = this.state.ids.slice();
     const messageList = this.state.messages.map(message => {
       
       return (
@@ -99,7 +106,7 @@ class ChatRoom extends React.Component {
           <div className ='user-micon'></div> 
 
         <div className='message'>
-          <span> <NavLink to={`/@me/dm/`} className='author_name'>{authors.shift()} </NavLink>  <aside className='date'>{dates.shift()} </aside></span>
+          <span> <aside onClick={()=> this.sendDM(ids.shift())} className='author_name'>{authors.shift()} </aside>  <aside className='date'>{dates.shift()} </aside></span>
           {message.map(body => {
             return (
               <li>{body}</li>
