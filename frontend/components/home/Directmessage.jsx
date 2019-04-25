@@ -24,10 +24,13 @@ class DirectMessages extends React.Component{
                </div>
            )
         }else{
+            let dmList = this.props.dmServers.map((dm) =>{
+                return <div className ='user-micon'></div> 
+            })
                     return(
              <div className='dm'>
             <div>
-                {this.props.dmServers[0].id}
+                {dmList}
             </div>
                 < UserNav />
             </div>

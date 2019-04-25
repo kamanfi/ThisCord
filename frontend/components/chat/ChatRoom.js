@@ -97,7 +97,7 @@ class ChatRoom extends React.Component {
       if (receiver_id != this.props.user_id){
       this.props.dms.forEach(dm => {
         debugger
-        if(dm.receiver_id ==user_id || dm.sender_id == user_id){
+        if(dm.receiver_id ==receiver_id && dm.sender_id == user_id ||dm.sender_id ==receiver_id && dm.sender_id == receiver_id){
           
         channel_id = dm.text_channel_id;
         }
