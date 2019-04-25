@@ -7,8 +7,38 @@
     height: 100%;
     color: #99aab5;
     background-color: #2F3136;
-    font-size: 12px;
-    justify-content: flex-end;
+    font-size: 20px;
+    
+  }
+
+  .dmLink {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* left: 75px; */
+    padding-top: 3%;
+    height: 100%;
+    color: #99aab5;
+    background-color: #2F3136;
+    font-size: 20px;
+ 
+  }
+
+  .innerDm{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-top: 50%;
+  }
+  .dmContainer{
+    padding-top: 10%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 5%;
+    width: 100%
   }
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import UserNav from '../chat/UserNavContainer';
-
+import {NavLink} from 'react-router-dom';
 class DirectMessages extends React.Component{
    
   constructor(props){
@@ -9,7 +9,7 @@ class DirectMessages extends React.Component{
   }
 
   componentDidMount(){
-      this.props.fetchDirectMessages();
+
   }
 
 
@@ -17,22 +17,32 @@ class DirectMessages extends React.Component{
         if(this.props.dmServers[0] == undefined){
             return(
                 <div className='dm'>
+                 DirectMessages
                <div>
                    {}
                </div>
                    < UserNav />
                </div>
            )
-        }else{
+        }
+        {
+            console.log(this.props.dmServers)
             let dmList = this.props.dmServers.map((dm) =>{
-                return <div className ='user-micon'></div> 
+                return (
+                    <NavLink to={`/@me/dm/${dm.text_channel_id}/Direct Message`} className="dmContainer">
+                    <div className ='user-micon'></div> 
+                    <div className='dmLink'>NAME</div>
+                    </NavLink>
+                )
             })
+            
                     return(
              <div className='dm'>
-            <div>
+                "DirectMessages"
+            <div className= "innerDm">
                 {dmList}
             </div>
-                < UserNav />
+       s         < UserNav />
             </div>
         )
         }
