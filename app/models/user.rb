@@ -61,12 +61,12 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :author_id
 
-  has_many :senders,
+  has_many :sentDMs,
   class_name: :DirectMessage,
   primary_key: :id,
   foreign_key: :sender_id
 
-  has_many :receivers,
+  has_many :receivedDMs,
   class_name: :DirectMessage,
   primary_key: :id,
   foreign_key: :receiver_id

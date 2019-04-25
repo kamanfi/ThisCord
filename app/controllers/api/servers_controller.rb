@@ -8,15 +8,22 @@ class Api::ServersController < ApplicationController
   end
 
   def create
-    @server = Server.new(server_params)
+    @server = Server.new({server_name: server_params[:server_name]})
     @server.moderator_id = current_user.id
- 
+    
     if @server.save
-        @users_server = UsersServer.new({user_id: current_user.id, server_id: @server.id})
-        @general_channel = TextChannel.new({name: 'general', server_id: @server.id})
-        @general_channel.save!
-        @users_server.save!
-      render "api/servers/show"
+      @general_channel = TextChannel.new({name: 'general', server_id: @server.id})
+      @general_channel.save!
+      
+        if server_params[:dm] == nil
+          @users_server = UsersServer.new({user_id: current_user.id, server_id: @server.id})
+          @users_server.save!
+          render "api/servers/show"
+        else
+          @directMessage = DirectMessage.new({receiver_id: server_params[:receiver_id], sender_id: current_user.id, text_channel_id: @general_channel.id} )
+          @directMessage.save!
+          render json: @directMessage
+        end
     else
       render json: @server.errors.full_messages, status: 422
     end
@@ -47,6 +54,6 @@ class Api::ServersController < ApplicationController
   
   def server_params
 
-    params.require(:server).permit(:server_name, :moderator_id, :img_url, :invite_code)
+    params.require(:server).permit(:server_name, :moderator_id, :img_url, :invite_code, :dm, :receiver_id )
   end
 end

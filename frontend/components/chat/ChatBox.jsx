@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ChatRoom from './ChatRoom';
+import ChatRoom from './ChatRoomContainer';
 import TitleInfo from './TitleInfo';
 const ChatBox = (props) =>{
   debugger

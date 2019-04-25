@@ -6,10 +6,17 @@ export const createDirectMessage = (direct_message) => {
     });
 };
 
-export const fetchDirectMessages = (server_id) => {
+export const fetchDirectMessages = () => {
     return $.ajax({
         url: `/api/direct_messages/`,
-        method: GET,
-        data: { server_id }
+        method: 'GET',
+    });
+};
+
+export const fetchDirectMessage = (id) => {
+    return $.ajax({
+        url: `/api/direct_messages/${id}`,
+        method: 'GET',
+        data: { id}
     });
 };

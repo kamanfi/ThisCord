@@ -42,7 +42,7 @@ class CreateServerModal extends React.Component {
           <ul>Enter an instant invite code</ul>
         </label>
         <label className="lower-container2">
-          <button onClick={() => dispatch(openModal('option'))}>Back</button>
+          <span onClick={() => dispatch(openModal('option'))}>Back</span>
           <button onClick={this.handeleSubmit}>Join</button>
         </label>
       </form>

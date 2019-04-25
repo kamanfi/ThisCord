@@ -20,7 +20,7 @@ class ChatChannel < ApplicationCable::Channel
       date = [message.created_at.strftime("%A %m/%d/%Y")]
       formattedMessage = []
       ids =[]
-      ids << [msg.author.id] 
+      ids << [message.author.id] 
       formattedMessage << [message.body]
       author = [message.author.user_name]
       socket = { message: formattedMessage, type: 'message', authors: author, dates: date, append: append, ids: ids }

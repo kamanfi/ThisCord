@@ -2,7 +2,7 @@ import React from 'react';
 import Nav1 from './Nav1';
 import UserNav from './UserNav';
 import Home from '../home/Home'
-import DirectMessage from '../home/Directmessage'
+import DirectMessage from '../home/DirectMessageContainer'
 import {selectsServer }from '../../actions/current_server_actions';
 import { Link } from 'react-router-dom';
 import ChatBox from './ChatBox';
@@ -18,19 +18,24 @@ class Main extends React.Component{
   }
   
   componentDidMount(){
-    this.props.fetchServers();
+    this.props.fetchServers()
+    this.props.fetchDirectMessages()
   }
 
 
+
   render() {
-    if (this.props.servers)
+    if (this.props.servers && this.props.dmServers) 
     return  (
       <>
       < div className='mainh'>
         < Nav1 servers={this.props.servers} fetchTextChannels={this.props.fetchTextChannels}/>
       </div >
-        <ProtectedRoute exact path='/@me/dm' component={DirectMessage} />
-        <ProtectedRoute exact path='/@me/dm' component={Home} />
+        <ProtectedRoute exact path='/@me/dm/' component={DirectMessage}/>
+        <Switch>
+        <ProtectedRoute exact path='/@me/dm/' component={Home} />
+        <ProtectedRoute exact path='/@me/dm/:channelId' component={ChatBox} />
+        </Switch>
         </>
       
     ) 

@@ -20,10 +20,12 @@ export const receive_directMessages = (directMessages) => {
   };
 
 
-  export const fetchDirectMessages = (id) => dispatch => {
-    return directMessageApiUtil.fetchDirectMessages(id).then((directMessages) => dispatch(receive_directMessages(directMessages)));
+  export const fetchDirectMessages = () => dispatch => {
+    return directMessageApiUtil.fetchDirectMessages().then((directMessages) => dispatch(receive_directMessages(directMessages)));
   };
-
+  export const fetchDirectMessage = (directMessage) => dispatch => {
+    return directMessageApiUtil.fetchDirectMessage(directMessage.id).then((directMessage) => dispatch(receive_directMessages(directMessage)));
+  };
   export const createDirectMessages = (directMessages) => dispatch => {
     return directMessageApiUtil.createDirectMessage(directMessages).then((directMessages) => dispatch(receive_directMessage(directMessages)));
   };

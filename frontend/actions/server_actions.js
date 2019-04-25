@@ -1,4 +1,5 @@
-import * as ServerUtil from '../util/severApiUtil';
+import * as ServerUtil from '../util/serverApiUtil';
+import {fetchDirectMessage} from '../actions/directMessageAction'
 
 export const RECEIVE_SERVERS = 'RECEIVE_SERVERS';
 export const RECEIVE_SERVER = 'RECEIVE_SERVER';
@@ -35,7 +36,12 @@ export const fetchServer = (id) => dispatch => {
 };
 
 export const createServer = (server) => dispatch => {
-  return ServerUtil.createServer(server).then((server) => dispatch(receive_server(server)));
+  
+  if (server.dm == "true"){
+    return ServerUtil.createServer(server).then((DMserver) => dispatch(fetchDirectMessage(DMserver)));
+  }else{
+    return ServerUtil.createServer(server).then((server) => dispatch(receive_server(server)));
+  }
 };
 
 export const joinServer = (inviteCode) => dispatch => {

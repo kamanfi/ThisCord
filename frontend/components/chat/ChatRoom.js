@@ -7,10 +7,11 @@ import {NavLink} from 'react-router-dom';
 class ChatRoom extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { messages: [] , authors: [], dates: [], ids: [] };
+    this.state = { messages: [] , authors: [], dates: [], ids: [], };
     this.load.bind(this);
     this.subscribe.bind(this);
     this.bottom = React.createRef();
+    this.sendDM.bind(this);
 
   }
 
@@ -26,7 +27,7 @@ class ChatRoom extends React.Component {
         App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][1]);
     };
     
-    debugger
+    
       App.cable.subscriptions.create(
         { channel: "ChatChannel", id: this.props.match.params.channelId},
         
@@ -46,7 +47,7 @@ class ChatRoom extends React.Component {
                   messages: this.state.messages.concat(data.message),
                   authors: this.state.authors.concat(data.authors),
                   dates: this.state.dates.concat(data.dates),
-                  ids: this.state.concat(data.ids)
+                  ids: this.state.ids.concat(data.ids)
                 });
               }
               break;
@@ -83,33 +84,55 @@ class ChatRoom extends React.Component {
 
     }
     componentDidMount(){
-
         this.subscribe();
+        this.props.fetchDirectMessages()
     }
     
-    sendDM(sender_id){
+    sendDM(receiver_id){
       // this.props.history.push(`@me/dm/${sender_id}`);
+      // this.props.find()
+      
+      let channel_id = undefined;
+      let user_id = this.props.user_id;
+      if (receiver_id != this.props.user_id){
+      this.props.dms.forEach(dm => {
+        debugger
+        if(dm.receiver_id ==user_id || dm.sender_id == user_id){
+          
+        channel_id = dm.text_channel_id;
+        }
+      });
       this.props.history.location.pathname =(`/`);
-      this.props.history.push(`@me/dm/${sender_id}`);
+      if (channel_id ==undefined){
+        this.props.createServer({server_name: 'REALTEST333', dm:'true', receiver_id}).then((dmserver) => this.props.history.push(`@me/dm/${dmserver.directMessages.text_channel_id}/Direct Message`))
+      }else{
+        this.props.history.push(`@me/dm/${channel_id}/Direct Message`);
+      }
+        
+    }
+
     }
 
   render() {
-    debugger
+    
     let authors = this.state.authors.slice();
     let dates = this.state.dates.slice();
     let ids = this.state.ids.slice();
-    const messageList = this.state.messages.map(message => {
-      
+    let key = 0;
+    
+    const messageList = this.state.messages.map((message,index) => {
+      let receiver_id = ids[index];
+
       return (
-        <div className= 'messageHolder' key={message.id}>
+        <div key ={key +=1}className= 'messageHolder'>
           
           <div className ='user-micon'></div> 
 
         <div className='message'>
-          <span> <aside onClick={()=> this.sendDM(ids.shift())} className='author_name'>{authors.shift()} </aside>  <aside className='date'>{dates.shift()} </aside></span>
+          <span> <aside onClick={()=> this.sendDM(receiver_id)} className='author_name'>{authors.shift()} </aside>  <aside className='date'>{dates.shift()} </aside></span>
           {message.map(body => {
             return (
-              <li>{body}</li>
+              <li key ={key+=1} >{body}</li>
             )
           })}
           <div ref={this.bottom} />

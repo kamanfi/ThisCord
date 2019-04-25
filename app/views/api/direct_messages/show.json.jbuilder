@@ -1,1 +1,1 @@
-json.partial! 'api/direct_messages/dm', server: @server
+json.partial! 'api/direct_messages/dm', direct_message: @direct_message
