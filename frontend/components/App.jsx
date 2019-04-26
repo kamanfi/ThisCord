@@ -19,7 +19,7 @@ const App = () => (
     
 
       <ProtectedRoute exact path='/@me' component={Main} />
-      <ProtectedRoute exact path='/@me/:serverId' component={Nav2} />
+      <ProtectedRoute exact path='/@me/:serverId/:channelId' component={Nav2} />
       <ProtectedRoute exact path='/@me/:serverId/:channelId/:name' component={ChatBox}/>
 
       

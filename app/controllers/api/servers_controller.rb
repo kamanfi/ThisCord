@@ -21,6 +21,10 @@ class Api::ServersController < ApplicationController
           render "api/servers/show"
         else
           @directMessage = DirectMessage.new({receiver_id: server_params[:receiver_id], sender_id: current_user.id, text_channel_id: @general_channel.id} )
+          
+          @directMessage.sender_name  = @directMessage.sender.user_name
+          @directMessage.receiver_name = @directMessage.receiver.user_name
+          
           @directMessage.save!
           render json: @directMessage
         end

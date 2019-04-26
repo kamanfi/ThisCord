@@ -28,10 +28,11 @@ class DirectMessages extends React.Component{
         {
             console.log(this.props.dmServers)
             let dmList = this.props.dmServers.map((dm) =>{
+                debugger
                 return (
                     <NavLink to={`/@me/dm/${dm.text_channel_id}/Direct Message`} className="dmContainer">
                     <div className ='user-micon'></div> 
-                    <div className='dmLink'>NAME</div>
+                    <div className='dmLink'>{dm.receiver_name}</div>
                     </NavLink>
                 )
             })
