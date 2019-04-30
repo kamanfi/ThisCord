@@ -24,7 +24,7 @@ export const receive_directMessages = (directMessages) => {
     return directMessageApiUtil.fetchDirectMessages().then((directMessages) => dispatch(receive_directMessages(directMessages)));
   };
   export const fetchDirectMessage = (directMessage) => dispatch => {
-    return directMessageApiUtil.fetchDirectMessage(directMessage.id).then((directMessage) => dispatch(receive_directMessages(directMessage)));
+    return directMessageApiUtil.fetchDirectMessage(directMessage.id).then((directMessage) => dispatch(receive_directMessage(directMessage)));
   };
   export const createDirectMessages = (directMessages) => dispatch => {
     return directMessageApiUtil.createDirectMessage(directMessages).then((directMessages) => dispatch(receive_directMessage(directMessages)));

@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 const TitleInfo = (props) =>{
 
-    debugger
+    
     return(
         <div className ="titleInfoBox">
             <span># {props.name}</span>

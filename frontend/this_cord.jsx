@@ -34,18 +34,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // TESTING user auth
-    window.signup = signup;
-    window.logout = logout;
-    window.login = login;
-  // TESING servers
-    window.fetchServers = fetchServers;
-    window.fetchServer  = fetchServer;
-    window.createServer = createServer;
-    window.deleteServer = deleteServer;
-  // TESTING textchannels
-  window.createTextChannel = createTextChannel;
-  window.fetchTextChannels = fetchTextChannels;
-  window.deleteTextChannels = deleteTextChannel;
+
 
 
   ReactDOM.render(<Root store={store} />, root)

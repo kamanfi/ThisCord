@@ -37,7 +37,7 @@ export const fetchServer = (id) => dispatch => {
 
 export const createServer = (server) => dispatch => {
   
-  if (server.dm == "true"){
+  if (server.dm == true ){
     return ServerUtil.createServer(server).then((DMserver) => dispatch(fetchDirectMessage(DMserver)));
   }else{
     return ServerUtil.createServer(server).then((server) => dispatch(receive_server(server)));

@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import Main from './Main';
 import { fetchServers } from '../../actions/server_actions';
 import { fetchTextChannels } from '../../actions/textChannel_actions';
-import { fetchDirectMessages } from '../../actions/directMessageAction'
+import { fetchDirectMessages } from '../../actions/directMessageAction';
+import { selectsServer } from '../../actions/current_server_actions';
+
 
 const msp = (state, ownProps) => {
 
@@ -20,7 +22,8 @@ const mdp = dispatch => {
     logout: () => dispatch(logout()),
     fetchServers: () => dispatch(fetchServers()),
     fetchTextChannels: (id) => dispatch(fetchTextChannels(id)),
-    fetchDirectMessages: () => dispatch(fetchDirectMessages())
+    fetchDirectMessages: () => dispatch(fetchDirectMessages()),
+    selectsServer: (id, invite_code, server_name ) => dispatch(selectsServer(id, invite_code, server_name ))
   };
 };
 

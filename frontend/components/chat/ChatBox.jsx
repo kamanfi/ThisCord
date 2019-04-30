@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import ChatRoom from './ChatRoomContainer';
 import TitleInfo from './TitleInfo';
 const ChatBox = (props) =>{
-  debugger
+  
   return(
     <div className='test'>
     <TitleInfo name={props.match.params.name}/> 

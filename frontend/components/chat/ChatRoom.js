@@ -85,7 +85,7 @@ class ChatRoom extends React.Component {
     }
     componentDidMount(){
         this.subscribe();
-        this.props.fetchDirectMessages()
+        this.props.fetchDirectMessages();
     }
     
     sendDM(receiver_id){
@@ -96,7 +96,7 @@ class ChatRoom extends React.Component {
       let user_id = this.props.user_id;
       if (receiver_id != this.props.user_id){
       this.props.dms.forEach(dm => {
-        debugger
+        
         if(dm.receiver_id ==receiver_id && dm.sender_id == user_id ||dm.sender_id ==receiver_id && dm.sender_id == receiver_id){
           
         channel_id = dm.text_channel_id;
@@ -104,7 +104,7 @@ class ChatRoom extends React.Component {
       });
       this.props.history.location.pathname =(`/`);
       if (channel_id ==undefined){
-        this.props.createServer({server_name: 'REALTEST333', dm:'true', receiver_id}).then((dmserver) => this.props.history.push(`@me/dm/${dmserver.directMessages.text_channel_id}/Direct Message`))
+        this.props.createServer({server_name: 'REALTEST333', dm: true, receiver_id}).then((dmserver) => this.props.history.push(`@me/dm/${dmserver.directMessage.text_channel_id}/Direct Message`))
       }else{
         this.props.history.push(`@me/dm/${channel_id}/Direct Message`);
       }
