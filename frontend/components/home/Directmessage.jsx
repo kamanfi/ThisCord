@@ -18,7 +18,7 @@ class DirectMessages extends React.Component {
             return (
                 <div className='dm'>
                     <div className="innerDm">
-                        {}
+               
                     </div>
                     < UserNav />
                 </div>

@@ -13,6 +13,7 @@
     background-color: #2A2D30;
     font-size: 12px;
 }
+
 .name-container {
     display: flex;
     flex-direction: column;
@@ -42,3 +43,9 @@
     height: 10%;
 }
 
+@media screen and (max-height: 730px) {
+    .name-container {
+        flex-direction: row;
+        overflow: hidden;
+    }
+  }
