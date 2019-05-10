@@ -6,6 +6,9 @@ import CreateServerModal from '../chat/serverModal/CreateServerModal';
 import JoinServerModal from '../chat/serverModal/JoinServerModal';
 import CreateChannelModal from '../chat/channelModal/CreateChannelModal';
 import InviteCodeModal from '../chat/serverModal/InviteCodeModal';
+import UploadFileModal from '../chat/uploadFileModal/UploadFileModal';
+import Dropzone from 'react-dropzone';
+
 
 function Modal({ modal, closeModal }) {
 
@@ -30,17 +33,22 @@ function Modal({ modal, closeModal }) {
     case 'inviteCode':
       component = <InviteCodeModal />;
       break;
-      
-      
+    case 'uploadFile':
+      component = <UploadFileModal />
+      break;
     default:
       return null;
   }
   return (
-    <div className="modal-background" onClick={closeModal}>
+    <Dropzone  noClick={true} onDragLeave={closeModal}>
+       {({ getRootProps, getInputProps }) => (
+    <div className="modal-background" {...getRootProps()} onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         {component}
       </div>
     </div>
+    )}
+    </Dropzone>
   );
 }
 

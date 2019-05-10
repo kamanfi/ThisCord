@@ -1,0 +1,24 @@
+.add_file_modal{
+    display: flex;
+    flex-direction: column;
+      // justify-content: space-between;
+    position: relative;
+    margin-top: 20%;
+    padding: 20px;
+    // height: 80%;
+    // width: 80%;
+    background-color:#7289da;
+    color: #ffffff;
+    border-radius: 1%;
+      
+      max-height: 130px; 
+      min-height: 130px;
+      width: 220PX;
+      border-radius: 3%;
+  }
+
+  .add_file_modal span{
+
+    font-size: 12px;
+  }
+  
