@@ -1,5 +1,6 @@
 class Message < ApplicationRecord
   validates :channel_type, :author_id, :body,  :channel_id, presence: true
+  has_one_attached :photo
 
   belongs_to :author,
   class_name: :User,

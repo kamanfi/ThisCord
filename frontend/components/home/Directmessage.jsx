@@ -17,14 +17,14 @@ class DirectMessages extends React.Component {
         if (this.props.dmServers[0] == undefined) {
             return (
                 <div className='dm'>
+                    DirectMessages
                     <div className="innerDm">
-               
                     </div>
                     < UserNav />
                 </div>
             )
         } else {
-            
+
             let dmList = this.props.dmServers.map((dm) => {
                 let receiver = this.props.currentUser.user_name == dm.sender_name ? dm.receiver_name : dm.sender_name
                 return (

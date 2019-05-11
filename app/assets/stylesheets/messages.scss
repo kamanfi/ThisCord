@@ -25,16 +25,10 @@ scrollbar-width: thin;
     background-color: #484C52;
     color: hsla(0,0%,100%,.7);
     border-radius: 5px;
-    
 }
 
-.message-form input:focus{
-    outline: none;
-}
 
-.message-form{
-    outline: none;
-}
+
 .message-holder{
     display: flex;
     flex-direction: column;

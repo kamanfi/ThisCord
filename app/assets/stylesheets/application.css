@@ -50,7 +50,12 @@ input, button{
 outline: none;
 border: none;
 }
-
+input:focus {
+  outline:none;
+}
+input:active {
+  outline:none;
+}
 html {
   width: 100%;
   height: 100%;
