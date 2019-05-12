@@ -33,7 +33,7 @@ class Greeting extends React.Component {
 
     
         <div className='signup'>     
-             <Link to={'/signup'}>Sign Up Now</Link>
+             <Link to={'/signup'}>Sign Up</Link>
           </div>
    
         <article>

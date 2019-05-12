@@ -45,9 +45,9 @@ scrollbar-width: thin;
     border-radius: 30px;
   }
    
-  body::-webkit-scrollbar {
-    width: 1em;
-}
+//   body::-webkit-scrollbar {
+//     width: 1em;
+// }
   /* Handle */
   .message-list::-webkit-scrollbar-thumb {
     background: #202124; 
