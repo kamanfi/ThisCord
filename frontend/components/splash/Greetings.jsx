@@ -43,7 +43,7 @@ class Greeting extends React.Component {
         <aside>
 
           <span className='middle'>
-            <Link to={'/login'}>TRY THIS-CODE</Link>
+            <Link to={'/login'}>TRY THISCORD</Link>
           </span>
         </aside>
           
