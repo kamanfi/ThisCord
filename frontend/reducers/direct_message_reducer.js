@@ -10,7 +10,6 @@ export const directMessagesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_DIRECT_MESSAGES:
-    debugger
       return merge({}, oldState, action.directMessages);
     case RECEIVE_DIRECT_MESSAGE:
       return merge({}, oldState, { [action.directMessage.id]: action.directMessage });

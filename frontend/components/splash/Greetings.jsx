@@ -19,16 +19,16 @@ class Greeting extends React.Component {
     return (
       <div className='splash-div'>
 
-        <header className='upper-right-header'>
-          <div>
+        <header className='upper-header'>
+          <div className='upper-left-header'>
             <nav>
                  <img src={window.logo} alt=""    /> 
-                <p>THISCODE</p>
+                <p>THISCORD</p>
             </nav>
        
           <a href="https://github.com/kamanfi/ThisCord">Github</a>
           </div>  
-          <div className='upper-left-header'><Link to={'/login'}>Login</Link></div>
+          <div className='upper-right-header'><Link to={'/login'}>Login</Link></div>
           </header>
 
     

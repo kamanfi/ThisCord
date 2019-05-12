@@ -8,7 +8,6 @@ class Api::UsersServersController < ApplicationController
     
     @users_server = UsersServer.new(user_server_params)
     if @users_server.save
-       console.log('pleaseWork')
     else
       render json: @users_server.errors.full_messages, status: 422
     end

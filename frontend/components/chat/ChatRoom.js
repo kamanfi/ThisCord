@@ -95,7 +95,6 @@ class ChatRoom extends React.Component {
   fetchAndsendDM(receiver_id){
 // this.props.history.push(`@me/dm/${sender_id}`);
     // this.props.find()
-    debugger
     let channel_id = undefined;
     let user_id = this.props.user_id;
     if (receiver_id != this.props.user_id) {
@@ -116,7 +115,6 @@ class ChatRoom extends React.Component {
     }
   }
   sendDM(receiver_id) {
-    debugger
     // this.props.history.push(`@me/dm/${sender_id}`);
     // this.props.find()
     this.props.fetchDirectMessages().then( ()=> this.fetchAndsendDM(receiver_id));
