@@ -20,6 +20,9 @@
     margin-bottom: 1%;
     border-bottom: solid #3E4147 1px;
 }
+.message-holder:focus{
+    outline: none;
+}
 
 .message{
     display: flex;
@@ -70,3 +73,13 @@
     font-size: 18px;
     color: white;
 } 
+
+.chatRoom{
+    display: flex;
+    flex-direction: row;
+}
+
+.users{
+    display: flex;
+    flex-direction: row;
+}

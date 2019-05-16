@@ -18,8 +18,8 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchServers()
-    this.props.fetchDirectMessages()
+    this.props.fetchServers();
+    this.props.fetchDirectMessages();
   }
 
 
