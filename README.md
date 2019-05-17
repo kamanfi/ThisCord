@@ -36,11 +36,13 @@ Discord displays messages in a particular manner, if last message sent to the se
 
 ![](/app/assets/images/Readme/block.png)
 
+To acheive this, the created at_date of the new message is subtracted from the created_at date of the last message sent to the channel. If the result is less than `100` , a `socket` object is created with an append key pointing to true. This key is read by the the chatBox component to determine if messages should be attached or displayed in a new block.
 
 ```ruby
   def speak(data)
-    # find channel sv it as channel 
+    #find channnnel and eagerload all messages in the channel
     channel = TextChannel.includes(:messages).find(data['message']['channelId'])
+    #create 
     message = Message.new(body: data['message']['body'], channel_type: 'text', author_id: data['message']['userId'], channel_id: data['message']['channelId'])
     lastmsg = channel.messages.last
     append = false
