@@ -33,6 +33,10 @@ jQuery AJAX to access backend through Thunk actions
 
 ## Challanges 
 Discord displays messages in a particular manner, if last message sent to the server and the previous message are sent from the same user, and the time between those 2 messages is less than 5 minutes. Discord attached the new message to the previous message block. As shown below.
+
+![](/app/assets/images/Readme/block.png)
+
+
 ```ruby
   def speak(data)
     # find channel sv it as channel 
