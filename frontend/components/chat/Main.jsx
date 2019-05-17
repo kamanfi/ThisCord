@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav1 from './Nav1';
-import UserNav from './UserNav';
+import Loading from './load/loading'
 import Home from '../home/Home'
 import DirectMessage from '../home/DirectMessageContainer'
 import { selectsServer } from '../../actions/current_server_actions';
@@ -26,7 +26,7 @@ class Main extends React.Component {
 
   
   render() {
-    if (this.props.servers && this.props.dmServers)
+    if (this.props.servers && this.props.dmServers){
       return (
         <React.Fragment>
           < div className='mainh'>
@@ -40,6 +40,12 @@ class Main extends React.Component {
         </React.Fragment>
 
       )
+    } else{
+      return(
+        <Loading />
+      )
+      
+    }
 
   }
 }

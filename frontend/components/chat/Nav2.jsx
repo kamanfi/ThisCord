@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import { NavLink } from 'react-router-dom';
 import UserNav from './UserNavContainer';
+import Loading from './load/loading'
+
 
 class Nav2 extends React.Component {
 
@@ -13,8 +15,11 @@ class Nav2 extends React.Component {
 
   componentDidMount() {
 
-    this.props.fetchTextChannels(this.props.match.params.serverId);
-    this.props.fetchUsers(this.props.match.params.serverId);
+    setTimeout(() => {
+      this.props.fetchUsers(this.props.match.params.serverId);
+      this.props.fetchTextChannels(this.props.match.params.serverId);
+    }, 1500);
+
 
   }
 
@@ -25,7 +30,7 @@ class Nav2 extends React.Component {
   render() {
 
     if (this.props.textChannels.length == 0 || this.props.server === undefined) {
-      return null;
+      return (<Loading />)
     }
 
 

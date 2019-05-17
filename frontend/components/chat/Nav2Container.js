@@ -17,7 +17,6 @@ const msp = (state, ownProps) => {
   
 
 const mdp = dispatch => {
-  debugger
   return {
     fetchTextChannels: (id) => dispatch(fetchTextChannels(id)),
     logout: () => dispatch(logout()),

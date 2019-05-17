@@ -138,3 +138,25 @@ height: 100px;
 #input-error{
   border: solid red 1px;
 }
+
+.loading{
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  background-color: #202225;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  align-content: center;
+  justify-content: center;
+
+}
+
+.loading img{
+  object-fit: contain;
+}
+
+.loading span{
+  align-self: center;
+}
