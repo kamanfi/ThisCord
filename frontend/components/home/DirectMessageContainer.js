@@ -6,7 +6,7 @@ const msp = (state, ownProps) => {
 
   return {
     dmServers: Object.values(state.entities.directMessages),
-    currentUser: Object.values(state.entities.users).pop()
+    currentUser: state.entities.users[state.session.id]
   };
 };
 

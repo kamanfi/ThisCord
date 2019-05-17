@@ -54,6 +54,12 @@ class Api::ServersController < ApplicationController
     end
   end
 
+  def users
+    @server = Server.includes(:users).find(params[:id])
+    @users = @server.users
+     render "api/servers/user"
+  end
+
   private 
   
   def server_params

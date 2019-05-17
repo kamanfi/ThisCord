@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import { NavLink } from 'react-router-dom';
-import { selectsServer } from '../../actions/current_server_actions';
 import UserNav from './UserNavContainer';
 
 class Nav2 extends React.Component {
@@ -15,6 +14,7 @@ class Nav2 extends React.Component {
   componentDidMount() {
 
     this.props.fetchTextChannels(this.props.match.params.serverId);
+    this.props.fetchUsers(this.props.match.params.serverId);
 
   }
 

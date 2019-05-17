@@ -84,12 +84,14 @@
 
 .add-server{
   display: flex;
-  width: 60%;
+  width: 50px;
+  height: 50px;
   border: 1px dashed;
   border-radius: 50%;
   justify-content: center;
   color: #535559;
-  margin-left: 12%; 
+  margin-left: 5px; 
+  margin-bottom: 10px; 
   font-weight: 300;
   line-height: 50px;
 }

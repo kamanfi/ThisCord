@@ -11,7 +11,7 @@ const ChatBox = (props) =>{
     <TitleInfo name={props.match.params.name}/> 
     <div className ='chatRoom'>
       <ChatRoom />
-      <Users />
+      {/* <Users /> */}
     </div>  
     </div>
   )

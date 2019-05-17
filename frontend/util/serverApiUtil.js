@@ -35,3 +35,10 @@ export const deleteServer = (id) => {
     method: 'DELETE'
   });
 }; 
+
+export const fetchUsers = (id) => {
+  return $.ajax({
+    url: `/api/servers/users/${id}`,
+    method: `GET`,
+  })
+}

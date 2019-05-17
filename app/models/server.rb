@@ -13,10 +13,14 @@ class Server < ApplicationRecord
   primary_key: :id,
   foreign_key: :server_id
 
-  has_many :users,
+  has_many :usersServers,
   class_name: :UsersServer,
   primary_key: :id,
   foreign_key: :server_id
+
+  has_many :users,
+  through: :usersServers,
+  source: :user
 
 
   private

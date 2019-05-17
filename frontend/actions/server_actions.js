@@ -4,6 +4,7 @@ import {fetchDirectMessage} from '../actions/directMessageAction'
 export const RECEIVE_SERVERS = 'RECEIVE_SERVERS';
 export const RECEIVE_SERVER = 'RECEIVE_SERVER';
 export const DELETE_SERVER = 'DELETE_SERVER';
+export const RECEIVE_USERS = 'RECEIVE_USERS';
 
 export const receive_servers = (servers) => {
   return {
@@ -25,6 +26,15 @@ export const remove_server = (id) => {
     serverId: id
   };
 };
+
+export const receive_users = (id) => {
+  return {
+    type: DELETE_SERVER,
+    serverId: id
+  };
+};
+
+
 
 
 export const fetchServers= () => dispatch => {
@@ -50,3 +60,7 @@ export const joinServer = (inviteCode) => dispatch => {
 export const deleteServer = (id) => dispatch => {
   return ServerUtil.deleteServer(id).then((id) => dispatch(remove_server(id)));
 };
+
+export const fetchUsers = (id) => dispatch =>{
+  return ServerUtil.fetchUsers(id).then((users) => dispatch(receive_users(users)));
+}
