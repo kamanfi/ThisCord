@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import ChatBox from './ChatBox';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../util/routeUtil';
+import Nav2 from './Nav2';
 
 
 class Main extends React.Component {
