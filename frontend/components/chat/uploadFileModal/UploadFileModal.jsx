@@ -19,7 +19,6 @@ class UploadFileModal extends React.Component{
         const reader = new FileReader();
         reader.addEventListener("load", () => {
             console.log(reader.result);
-            debugger
         }, false);
         this.setState({imgSrc: reader.result});
         reader.readAsDataURL(currentFile);

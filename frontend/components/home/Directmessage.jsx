@@ -28,7 +28,7 @@ class DirectMessages extends React.Component {
             let dmList = this.props.dmServers.map((dm) => {
                 let receiver = this.props.currentUser.user_name == dm.sender_name ? dm.receiver_name : dm.sender_name
                 return (
-                    <NavLink to={`/@me/dm/${dm.text_channel_id}/Direct Message`} className="dmContainer">
+                    <NavLink to={`/@me/dm/${dm.text_channel_id}/Direct Message`} className="dmContainer" key={dm.id}>
                         <div className='user-micon'></div>
                         <div className='dmLink'>{receiver}</div>
                     </NavLink>

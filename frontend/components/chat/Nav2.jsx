@@ -28,7 +28,6 @@ class Nav2 extends React.Component {
 
   }
   render() {
-    debugger
     if (this.props.textChannels.length == 0 || this.props.server === undefined ) {
       if(this.props.match.params.serverId== 'dm'){
         return null;
