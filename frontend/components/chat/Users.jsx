@@ -2,12 +2,12 @@ import React, { useState} from 'react';
 
 
 
-function Users(){
+function Users(props){
 
 
+    debugger
     return (
         <div>
-        
       </div>
     )
 }
