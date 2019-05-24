@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import DirectMessages from '././Directmessage';
-import { fetchDirectMessages } from '../../actions/directMessageAction'
+import { fetchDirectMessages } from '../../actions/directMessageAction';
+import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
 
@@ -17,4 +18,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(DirectMessages);
+export default connect(msp, mdp)(withRouter(DirectMessages));

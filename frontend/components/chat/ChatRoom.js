@@ -107,7 +107,7 @@ class ChatRoom extends React.Component {
       });
       this.props.history.location.pathname = (`/`);
       if (channel_id == undefined) {
-        this.props.createServer({ server_name: 'REALTEST333', dm: true, receiver_id }).then((dmserver) => this.props.history.push(`@me/dm/${dmserver.directMessage.text_channel_id}/Direct Message`))
+        this.props.createServer({ server_name: '-DMSERVER-', dm: true, receiver_id }).then((dmserver) => this.props.history.push(`@me/dm/${dmserver.directMessage.text_channel_id}/Direct Message`))
       } else {
         this.props.history.push(`@me/dm/${channel_id}/Direct Message`);
       }

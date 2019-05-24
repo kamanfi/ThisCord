@@ -40,9 +40,8 @@ class Nav1 extends React.Component {
 
 
     const lis = this.props.servers.map(({ id, invite_code, server_name }) => {
-      return (<li className='server-icon' key={id} tabIndex="3" onClick={() => this.selectServer({ id, invite_code, server_name })}> <span>{server_name.slice(0, 2)}</span> </li>)
+      return (<li className={this.props.location.pathname.includes(id) ? "server-iconSelected": 'server-icon' } key={id} tabIndex="3" onClick={() => this.selectServer({ id, invite_code, server_name })}> <span>{server_name.slice(0, 2)}</span> </li>)
     })
-    //check to make sure lis is empty otherwise dont render
     return (
       <aside className='nav1-aside'>
         <NavLink to={`/@me/dm`} className='home-icon'>

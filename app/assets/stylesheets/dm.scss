@@ -1,3 +1,18 @@
+.dmTitle{
+  font-size: 12px;
+  color: #fff;
+  opacity: .3;
+  font-weight: 500;
+  -webkit-transition: opacity .15s ease;
+  transition: opacity .15s ease;
+  padding: 9px 20px;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
 .dm {
     position: relative;
     display: flex;
@@ -15,36 +30,59 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    /* left: 75px; */
     padding-top: 3%;
+    padding-left: 3%;
     height: 100%;
     min-width: 80%;
-    color: #99aab5;
-    background-color: #2F3136;
     font-size: 20px;
-    
- 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #72767d;
+  }
+
+  .dmContainer:focus{
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   .innerDm{
     position: relative;
     display: flex;
     flex-direction: column;
-
+    height: 94.3%;
     width: 100%;
-    padding-top: 15%;
+    padding-top: 21%;
   }
   .dmContainer{
-    padding-top: 20px;
+    padding-top: 5px;
     position: relative;
     display: flex;
     flex-direction: row;
-    height: 40px;
-    width: 200px;
+    height: 51px;
+    width: 100%;
+    padding-left: 15px;
+  }
+
+  .dmContainerSelected{
+    padding-top: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 51px;
+    width: 100%;
+    padding-left: 15px;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   .dmContainer :hover{
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
   }
     .home {
         position: relative;
